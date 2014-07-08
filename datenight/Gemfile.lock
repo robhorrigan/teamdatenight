@@ -38,6 +38,8 @@ GEM
     coffee-script-source (1.7.0)
     erubis (2.7.0)
     execjs (2.2.1)
+    fandango (1.0.0)
+      nokogiri (~> 1.0)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (2.1.2)
@@ -51,8 +53,11 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_portile (0.6.0)
     minitest (5.4.0)
     multi_json (1.10.1)
+    nokogiri (1.6.2.1)
+      mini_portile (= 0.6.0)
     polyglot (0.3.5)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -114,6 +119,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  fandango
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.3)
