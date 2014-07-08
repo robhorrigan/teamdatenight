@@ -1,12 +1,14 @@
-<% @movies.each do |theater| %>
-<ul>
-			<%= theater[:theater][:name] %>
-			<% theater[:movies].each do |movie| %>
-			<li>
-				<%= movie[:title] %>
+<%= form_tag("/restaurants") do %>
 
-			</li>
-			<% end %>
-			</ul> 
+<% @movies.each do |theater| %>
+	<%= theater[:theater][:name] %>
+	<br>
+		<% theater[:movies].each do |movie| %>
+				<%= radio_button_tag(:movie, '#{movie[:title]}') %>
+				<%= label_tag(movie[:title]) %>
+				<br>
+		<% end %>
 			<br>
-			<% end %>
+	<% end %>
+	  <%= submit_tag 'Submit' %>
+<%end%>
