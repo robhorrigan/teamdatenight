@@ -1,11 +1,12 @@
-
-
-	<ul>
-<%= @movies.each do |movie| %>
-			<%= movie[:movies].each do |movie| %>
+<% @movies.each do |theater| %>
+<ul>
+			<%= theater[:theater][:name] %>
+			<% theater[:movies].each do |movie| %>
 			<li>
 				<%= movie[:title] %>
+
 			</li>
-			<% end %> 
 			<% end %>
-		</ul>
+			</ul> 
+			<br>
+			<% end %>
