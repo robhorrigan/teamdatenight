@@ -1,18 +1,17 @@
 class Restaurant < ActiveRecord::Base
   belongs_to :movie
-  # consumer_key = 'eTea0o4ChaOIb63F-te7Gg'
-  # consumer_secret = 'eJgmD0A9xzA40JLP3WeZ_cxhAHQ'
-  # token = 'BK68HjB4vIhIep_RYng-Drf9adE6FhvY'
-  # token_secret = '2Fa0SGivQYnjgd7S3YtMelWwjUw'
+  consumer_key = 'eTea0o4ChaOIb63F-te7Gg'
+  consumer_secret = 'eJgmD0A9xzA40JLP3WeZ_cxhAHQ'
+  token = 'BK68HjB4vIhIep_RYng-Drf9adE6FhvY'
+  token_secret = '2Fa0SGivQYnjgd7S3YtMelWwjUw'
 
-  # api_host = 'api.yelp.com'
+  api_host = 'api.yelp.com'
 
-  # consumer = OAuth::Consumer.new(consumer_key, consumer_secret, {:site => "http://#{api_host}"})
-  # access_token = OAuth::AccessToken.new(consumer, token, token_secret)
+  consumer = OAuth::Consumer.new(consumer_key, consumer_secret, {:site => "http://#{api_host}"})
+  access_token = OAuth::AccessToken.new(consumer, token, token_secret)
 
-  # path = "/v2/search?term=restaurants&location=new%20york" We could interpolate the zip code in this string
+  path = "/v2/search?term=restaurants&location=#{zip_code}&limit=20"
   
-  # body = JSON.parse(access_token.get(path).body)
-  # p body
-
+  restaurant_hash = JSON.parse(access_token.get(path).body)
+  
 end
