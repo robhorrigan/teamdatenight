@@ -1,10 +1,12 @@
-<h1>Listing restaurants</h1>
+<h1>Restaurants near your theater:</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th colspan="3"></th>
+      <th>Cuisine</th>
+      <th>Rating</th>
+      <th>Phone Number</th>
     </tr>
   </thead>
 
@@ -12,11 +14,14 @@
     <% @restaurants.each do |restaurant| %>
       <tr>
         <td><%= restaurant["name"] %></td>
+        <td><% restaurant["categories"].each do |tag|%>
+          <%= "#{tag[0]}, " %>
+          <%end%> </td>
+        <td><%= restaurant["rating"] %></td>
+        <td><%= restaurant["display_phone"] %> </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Restaurant', new_restaurant_path %>
