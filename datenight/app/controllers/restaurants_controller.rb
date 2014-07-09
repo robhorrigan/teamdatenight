@@ -4,8 +4,8 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
+     @zip = :theater_zip
      @restaurants = Restaurant.findings["businesses"]
-
   end
 
   # GET /restaurants/1
@@ -25,7 +25,7 @@ class RestaurantsController < ApplicationController
   # POST /restaurants
   # POST /restaurants.json
   def create
-    @restaurant = Restaurant.new(restaurant_params)
+    @restaurant = Restaurant.new(:zipcode=>params[:theater_zip])
 
     respond_to do |format|
       if @restaurant.save
@@ -70,6 +70,7 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name)
+      binding.pry
+      params.require(:movie, :theater_zip).permit(:name)
     end
 end

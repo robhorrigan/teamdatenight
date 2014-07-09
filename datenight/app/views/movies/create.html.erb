@@ -4,7 +4,7 @@
 	<%= theater[:theater][:name] %>
 	<br>
 		<% theater[:movies].each do |movie| %>
-				<%= radio_button_tag(:movie, '#{movie[:title]}') %>
+				<%= radio_button_tag(:movie, movie[:title], :theater_zip, theater[:theater][:postal_code]) %>
 				<%= label_tag(movie[:title]) %>
 				<br>
 		<% end %>
