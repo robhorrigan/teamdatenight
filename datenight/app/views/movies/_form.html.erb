@@ -1,21 +1,6 @@
-<%= form_for(@movies) do |f| %>
-  <% if @movies.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@movies.errors.count, "error") %> prohibited this movie from being saved:</h2>
 
-      <ul>
-      <% @movie.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= form_tag("/movies")  do %>
+  <%= label_tag ('zipcode') %>
+  <%= text_field_tag('zipcode')%>
+  <%= submit_tag 'Submit' %>
 <% end %>

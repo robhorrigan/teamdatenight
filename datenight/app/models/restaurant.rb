@@ -12,7 +12,7 @@ class Restaurant < ActiveRecord::Base
     consumer = OAuth::Consumer.new(consumer_key, consumer_secret, {:site => "http://#{api_host}"})
     access_token = OAuth::AccessToken.new(consumer, token, token_secret)
 
-    path = "/v2/search?term=restaurants&location=11106&limit=20"
+    path = "/v2/search?term=restaurants&location=#{:zipcode}&limit=20"
 
     JSON.parse(access_token.get(path).body)
   end
