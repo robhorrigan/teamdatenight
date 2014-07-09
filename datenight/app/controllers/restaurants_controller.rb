@@ -4,8 +4,9 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-     @zip = :theater_zip
-     @restaurants = Restaurant.findings["businesses"]
+    @movie = "The Matrix"
+    @zip = :postal_code
+    @restaurants = Restaurant.findings["businesses"]
   end
 
   # GET /restaurants/1
