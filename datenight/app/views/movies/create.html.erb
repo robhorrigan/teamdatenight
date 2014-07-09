@@ -2,11 +2,11 @@
 
 <% @movies.each do |theater| %>
 	<%= theater[:theater][:name] %>
+	<%= hidden_field_tag :postal_code, theater[:theater][:postal_code] %> 
 	<br>
+		
 		<% theater[:movies].each do |movie| %>
-				<%= radio_button_tag(:movie, '#{movie[:title]}') %>
-				<%= label_tag(movie[:title]) %>
-				<br>
+				<input type="radio" id=<%= "#{theater[:theater][:postal_code]}" %> name="movie_title" value='<%= "#{movie[:title]}" %>'><%= "#{movie[:title]}" %><br>
 		<% end %>
 			<br>
 	<% end %>
