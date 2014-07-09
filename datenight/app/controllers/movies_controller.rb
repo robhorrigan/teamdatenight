@@ -4,7 +4,6 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Fandango.movies_near(@zipcode)
   end
 
   # GET /movies/1
