@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  post '/restaurants/show' => 'restaurants#show'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
