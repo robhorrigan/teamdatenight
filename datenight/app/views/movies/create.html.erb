@@ -1,14 +1,5 @@
 <%= form_tag("/restaurants") do %>
 
-<% @movies.each do |theater| %>
-	<%= theater[:theater][:name] %>
-	<%= hidden_field_tag :postal_code, theater[:theater][:postal_code] %> 
-	<br>
-		
-		<% theater[:movies].each do |movie| %>
-				<input type="radio" id=<%= "#{theater[:theater][:postal_code]}" %> name="movie_title" value='<%= "#{movie[:title]}" %>'><%= "#{movie[:title]}" %><br>
-		<% end %>
-			<br>
-	<% end %>
+
 	  <%= submit_tag 'Submit' %>
 <%end%>

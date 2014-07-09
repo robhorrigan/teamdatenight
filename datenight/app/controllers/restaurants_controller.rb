@@ -4,7 +4,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    binding.pry 
+     @zip = :theater_zip
      @restaurants = Restaurant.findings["businesses"]
   end
 
@@ -65,12 +65,11 @@ class RestaurantsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_restaurant
-      @restaurant = Restaurant.find(params[:id])
+      # @restaurant = Restaurant.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      binding.pry
-      params.require(:restaurant).permit(:name)
+      params.require(:movie_title, :postal_code).permit(:name)
     end
 end

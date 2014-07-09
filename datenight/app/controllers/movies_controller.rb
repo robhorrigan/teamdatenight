@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Fandango.movies_near(@zipcode)
+    
   end
 
   # GET /movies/1
@@ -24,7 +24,7 @@ class MoviesController < ApplicationController
   # POST /movies
   # POST /movies.json
   def create
-    @movies = Fandango.movies_near(params[:zipcode])[0..5]
+    
 
     # respond_to do |format|
     #   if @movies.save
