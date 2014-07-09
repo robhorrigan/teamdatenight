@@ -4,8 +4,8 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
+    binding.pry 
      @restaurants = Restaurant.findings["businesses"]
-
   end
 
   # GET /restaurants/1

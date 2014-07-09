@@ -12,6 +12,8 @@
     <% @restaurants.each do |restaurant| %>
       <tr>
         <td><%= restaurant["name"] %></td>
+        <td><%= restaurant["categories"][0][0] %></td>
+        <td><%= restaurant["display_phone"] %></td>
       </tr>
     <% end %>
   </tbody>
