@@ -4,7 +4,7 @@ class Movie < ActiveRecord::Base
   has_one :restaurant
 
   today = 0
-
+  
   html = open("http://www.google.com/movies?near=#{@zipcode}&date=#{today}")
 
   movies_doc = Nokogiri::HTML(html)
@@ -15,7 +15,10 @@ class Movie < ActiveRecord::Base
     theater_hash = {}
     theater_hash[:name] = theater.css('h2.name').text
     theater_hash[:info] = theater.css('div.info').text
-    theater_hash[:movies] = theater.css('div.movie').text.gsub("Trailer -", "").gsub("IMDb", "").gsub("&nbsp", "").gsub(/pm/, 'pm $').split('$')
+    theater_hash[:movies] = theater.css('div.movie').map do |movie| 
+      movie.text.gsub(" Trailer -","").gsub(" IMDb","").gsub("&nbsp","")
+    end
+
     @movies_array << theater_hash
   end
 
