@@ -1,5 +1,12 @@
 <%= form_tag("/restaurants") do %>
-
-
+  <ul><% @movie_data.each do |theater|%>
+    <li><%= theater[:name]%></li>
+    <li><%= theater[:info]%></li>
+      <ol><% theater[:movies].each do |movie|%>
+        <li><%= movie%></li>
+      <% end %>
+      </ol>
+  <% end %>
+</ul>
 	  <%= submit_tag 'Submit' %>
 <%end%>

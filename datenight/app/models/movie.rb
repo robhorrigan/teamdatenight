@@ -23,4 +23,13 @@ class Movie < ActiveRecord::Base
     @movies_array
   end
 
+  def self.name
+  end
+
+  def self.info
+  end
+
+  def self.display_movies
+  end
+
 end

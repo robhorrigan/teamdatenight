@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    
+    @movie_data = Movie.all
   end
 
   # GET /movies/1
@@ -24,7 +24,7 @@ class MoviesController < ApplicationController
   # POST /movies
   # POST /movies.json
   def create
-    
+    @movie_data = Movie.all
 
     # respond_to do |format|
     #   if @movies.save
