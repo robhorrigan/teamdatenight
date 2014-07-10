@@ -31,7 +31,7 @@ class Movie < ActiveRecord::Base
   end
 
   def self.all 
-    @movies_array
+    @theaters_array
   end
 
   def self.name
