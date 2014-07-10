@@ -24,7 +24,9 @@ class MoviesController < ApplicationController
   # POST /movies
   # POST /movies.json
   def create
-    
+    @zipcode = params[:zipcode]
+    binding.pry
+    @movies_array = Movie.all
 
     # respond_to do |format|
     #   if @movies.save
