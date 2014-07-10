@@ -4,7 +4,7 @@ class Movie < ActiveRecord::Base
   has_one :restaurant
 
   today = 0
-
+  binding.pry
   html = open("http://www.google.com/movies?near=#{@zipcode}&date=#{today}")
 
   movies_doc = Nokogiri::HTML(html)
@@ -21,6 +21,15 @@ class Movie < ActiveRecord::Base
 
   def self.all 
     @movies_array
+  end
+
+  def self.name
+  end
+
+  def self.info
+  end
+
+  def self.display_movies
   end
 
 end
