@@ -3,10 +3,12 @@ require 'open-uri'
 class Movie < ActiveRecord::Base
   has_one :restaurant
 
+  @zipcode = 11217
+
   today = 0
   
   html = open("http://www.google.com/movies?near=#{@zipcode}&date=#{today}")
-
+  
   movies_doc = Nokogiri::HTML(html)
 
   @movies_array = []
