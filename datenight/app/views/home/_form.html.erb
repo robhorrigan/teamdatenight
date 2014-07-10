@@ -1,5 +1,9 @@
 <%= form_tag("/movies")  do %>
   <%= label_tag ('zipcode') %>
   <%= text_field_tag('zipcode')%>
+<br>
+ <%= label_tag ('Day:') %>
+ <%= select_tag "day", "<option>0</option><option>1</option><option>2</option><option>3</option> ".html_safe, disabled: false %>
+<br>
   <%= submit_tag 'Submit' %>
 <% end %>

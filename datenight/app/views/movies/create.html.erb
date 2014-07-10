@@ -1,15 +1,20 @@
-<h1>Theaters and Movie Times in <%= @zipcode %>:</h1>
+<h1>Theaters and Movie Times near <%= @zipcode %>:</h1>
 
 
 <%= form_tag("/restaurants") do %>
-  <ul><% @movie_data.each do |theater|%>
+  <ul><% @theaters_array.each do |theater|%>
     <h3>Theater:</h3>
     <li><%= theater[:name]%></li>
-    <li><%= theater[:info]%></li>
+    <li><%= theater[:number]%></li>
+    <li><%= theater[:address]%></li>
+
       <h4>Movies:</h4>
       <ol><% theater[:movies].each do |movie|%>
-        <li><%= movie%></li>
-        <input type="radio" name="movie_name" value='<%="#{movie}"%>'>
+        <li><%= movie[:title] %> | <%= movie[:movie_info] %></li>
+           <ul><% movie[:run_times].each do |time| %>
+              <li><input type="radio" name="movie_name" value='<%="#{movie}"%>'><%= time%></li>
+              <%end%>
+            </ul>
       <% end %>
       </ol>
   <% end %>
