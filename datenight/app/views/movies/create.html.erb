@@ -2,7 +2,7 @@
 
 
 <%= form_tag("/restaurants") do %>
-  <ul><% @movie_data.each do |theater|%>
+  <ul><% @theaters_array.each do |theater|%>
     <h3>Theater:</h3>
     <li><%= theater[:name]%></li>
     <li><%= theater[:info]%></li>
