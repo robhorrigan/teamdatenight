@@ -8,12 +8,9 @@
     <li><%= theater[:info]%></li>
       <h4>Movies:</h4>
       <ol><% theater[:movies].each do |movie|%>
-<<<<<<< HEAD
-        <li><%= movie %></li>
-=======
         <li><%= movie%></li>
         <input type="radio" name="movie_name" value='<%="#{movie}"%>'>
->>>>>>> 89ca6c1f42121d930c66ea2428ae1113619c157d
+
       <% end %>
       </ol>
   <% end %>
