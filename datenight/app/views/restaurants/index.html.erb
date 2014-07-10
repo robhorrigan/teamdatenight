@@ -19,8 +19,9 @@
     <% @restaurants.each do |restaurant| %>
       <tr>
         <td><input type="radio" name="restaurant_name" value='<%="#{restaurant["name"]}"%>'><%="#{restaurant["name"]}"%></td>
+
         <td><% restaurant["categories"].each do |tag|%>
-          <%= "#{tag[0]}, " %>
+          <%= "#{tag[0]}," %>
           <%end%> </td>
         <td><%= restaurant["rating"] %></td>
         <td><%= restaurant["display_phone"] %> </td>

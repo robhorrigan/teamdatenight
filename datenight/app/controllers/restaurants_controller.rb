@@ -12,6 +12,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
+    @restaurant = params[:restaurant_name]
   end
 
   # GET /restaurants/new
