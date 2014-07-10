@@ -10,6 +10,7 @@
       <ol><% theater[:movies].each do |movie|%>
         <li><%= movie%></li>
         <input type="radio" name="movie_name" value='<%="#{movie}"%>'>
+
       <% end %>
       </ol>
   <% end %>
