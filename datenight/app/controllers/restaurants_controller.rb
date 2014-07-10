@@ -4,7 +4,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @movie = "The Matrix"
+    @movie = "The Matrix 2: It Should Never Have Happened"
     @zip = :postal_code
     @restaurants = Restaurant.findings["businesses"]
   end
@@ -12,7 +12,8 @@ class RestaurantsController < ApplicationController
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
-    @restaurant = params[:restaurant_name]
+    @restaurant = params[:restaurant]
+    @movie = params[:movie_name]
   end
 
   # GET /restaurants/new
@@ -72,6 +73,6 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:movie_title, :postal_code).permit(:name)
+      params.require(:movie_name, :address).permit(:name)
     end
 end

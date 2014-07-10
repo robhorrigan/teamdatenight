@@ -4,7 +4,6 @@ class Movie < ActiveRecord::Base
   has_one :restaurant
 
   today = 0
-  binding.pry
   html = open("http://www.google.com/movies?near=#{@zipcode}&date=#{today}")
 
   movies_doc = Nokogiri::HTML(html)
