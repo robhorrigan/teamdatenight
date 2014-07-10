@@ -26,7 +26,7 @@ class MoviesController < ApplicationController
   def create
     @zipcode = params[:zipcode]
 
-    Movie.theaters_near(params[:zipcode])
+    Movie.theaters_near(params[:zipcode], params[:day])
     @theaters_array = Movie.all
 
     # respond_to do |format|
