@@ -24,7 +24,8 @@ class MoviesController < ApplicationController
   # POST /movies
   # POST /movies.json
   def create
-    @zipcode = 11217
+    @zipcode = params[:zipcode]
+    theaters_by(params[:zipcode])
     @movie_data = Movie.all
 
     # respond_to do |format|
