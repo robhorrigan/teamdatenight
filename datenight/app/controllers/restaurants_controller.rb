@@ -4,7 +4,6 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-  
   end
 
   # GET /restaurants/1
@@ -26,11 +25,11 @@ class RestaurantsController < ApplicationController
   # POST /restaurants
   # POST /restaurants.json
   def create
-
-    # @restaurant = Restaurant.new(restaurant_params)
-    @movie = params[:movie_title]
+    @movie = params[:movie_name]
     @address = params[:theater_address]
+    @theater_name = params[:theater_name]
     @restaurants = Restaurant.findings["businesses"]
+    # @restaurant = Restaurant.new(restaurant_params)
     # respond_to do |format|
     #   if @restaurant.save
     #     format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created.' }
@@ -74,7 +73,7 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      # params.require(:theater_address)
-      params.require(:restaurant).permit(:theater_address)
+
+      params.require(:theater_address)
     end
 end
