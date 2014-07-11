@@ -4,21 +4,34 @@
 <%= form_tag("/restaurants") do %>
   <ul><% @theaters_array.each do |theater|%>
     <h3>Theater:</h3>
-    <li><%= theater[:name]%></li>
+    
+    <li> 
+      <input id= "<%theater[:name]%>" type="hidden" value= '<%="#{theater[:name]}"%>' name="theater_name">
+       <%= theater[:name]%>
+     </li>
+
     <li><%= theater[:number]%></li>
-    <li><%= theater[:address]%></li>
+
+    <li>
+      <input id= "<%theater[:address]%>" type="hidden" value='<%="#{theater[:address]}"%>' name="theater_address" >
+     <%= theater[:address]%>
+   </li>
 
       <h4>Movies:</h4>
       <ol><% theater[:movies].each do |movie|%>
-        <li><%= movie[:title] %> | <%= movie[:movie_info] %></li>
-           <ul><% movie[:run_times].each do |time| %>
-              <li><input type="radio" name="movie_name" value='<%="#{movie}"%>'><%= time%></li>
+        <li><input id="movie[title]" type="hidden" value='<%="#{movie[:title]}"%>' name="movie_title"  ><%= movie[:title] %> | <%= movie[:movie_info] %></li>
+
+           <ul> <% movie[:run_times].each do |time| %>
+              <li><input type="radio" name="movie_time" value='<%="#{time}"%>'>
+
+                <%= time%></li>
+
+          
               <%end%>
             </ul>
       <% end %>
       </ol>
   <% end %>
 </ul>
-	<input type="radio" name="movie_name" value='<%="The Matrix 3: Are We Still Doing This?"%>'><%="The Matrix 3"%>
 	  <%= submit_tag 'Submit' %>
 <%end%>
