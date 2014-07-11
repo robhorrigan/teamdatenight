@@ -1,9 +1,17 @@
-<%= form_tag("/movies")  do %>
-  <%= label_tag ('zipcode') %>
-  <%= text_field_tag('zipcode')%>
-<br>
- <%= label_tag ('Day:') %>
- <%= select_tag "day", "<option>0</option><option>1</option><option>2</option><option>3</option> ".html_safe, disabled: false %>
-<br>
-  <%= submit_tag 'Submit' %>
-<% end %>
+<h1>Welcome to 4 Days Out!</h1>
+<h2>Please make your selection:</h2>
+<form action="/movies" method="get">
+
+  <label for="zipcode">Zipcode: </label>
+  <input type="text" id="zipcode" name="zipcode">
+
+  <select name="day">
+    <option type="hidden" id="today" name="day" value="0">Today</option>
+    <option type="hidden" id="tomorrow" name="day" value="1">Tomorrow</option>
+    <option type="hidden" id="next_day" name="day" value="2"><%= @next_day %></option>
+    <option type="hidden" id="last_day" name="day" value="3"><%= @last_day %></option>
+  </select>  
+  
+  <input type="submit" value="Submit">
+
+</form>
