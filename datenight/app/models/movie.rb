@@ -39,8 +39,7 @@ class Movie < ActiveRecord::Base
     @zipcode
   end
 
-  def self.day
-    @day
+  def self.date
   end
 
   def self.display_movies

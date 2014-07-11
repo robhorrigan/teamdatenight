@@ -4,9 +4,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @movie = "The Matrix 2: It Should Never Have Happened"
-    @zip = :postal_code
-    @restaurants = Restaurant.findings["businesses"]
+  
   end
 
   # GET /restaurants/1
@@ -16,11 +14,11 @@ class RestaurantsController < ApplicationController
     @movie = params[:movie_name]
   end
 
-  # GET /restaurants/new
-  def new
-    @restaurant = Restaurant.new
-  end
-
+  
+# GET /restaurants/new
+  # def new
+  #   @restaurant = Restaurant.new
+  # end
   # GET /restaurants/1/edit
   def edit
   end
@@ -28,17 +26,20 @@ class RestaurantsController < ApplicationController
   # POST /restaurants
   # POST /restaurants.json
   def create
-    @restaurant = Restaurant.new(restaurant_params)
 
-    respond_to do |format|
-      if @restaurant.save
-        format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created.' }
-        format.json { render :show, status: :created, location: @restaurant }
-      else
-        format.html { render :new }
-        format.json { render json: @restaurant.errors, status: :unprocessable_entity }
-      end
-    end
+    # @restaurant = Restaurant.new(restaurant_params)
+    @movie = params[:movie_title]
+    @address = params[:theater_address]
+    @restaurants = Restaurant.findings["businesses"]
+    # respond_to do |format|
+    #   if @restaurant.save
+    #     format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created.' }
+    #     format.json { render :show, status: :created, location: @restaurant }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @restaurant.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /restaurants/1
@@ -68,11 +69,12 @@ class RestaurantsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_restaurant
-      @restaurant = Restaurant.new(params[:id])
+      @restaurant = Restaurant.new(params[:theater_address])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:movie_name, :address).permit(:name)
+      # params.require(:theater_address)
+      params.require(:restaurant).permit(:theater_address)
     end
 end
