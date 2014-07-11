@@ -1,13 +1,7 @@
-require 'date'
-
-class HomeController < ApplicationController
+class HomeController < ApplicationController 
   
   def index
-    today = Date.today
-    tomorrow = today.next
-    @next_day = tomorrow.next
-    @last_day = @next_day.next
-
-
+    @next_day = Home.next_day
+    @last_day = Home.last_day
   end
 end
