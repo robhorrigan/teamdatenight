@@ -1,6 +1,9 @@
 <h1>Restaurants near your theater:</h1>
 
 <p> What will you have for dinner after seeing <%= @movie%>?</p>
+
+<p><%= @theater_name%>, <%= @address %> </p>
+
 <%= form_tag ("/confirmations") do %>
 <input id="movie", name="movie" type="hidden", value="The Matrix 4: Please No" >
 
