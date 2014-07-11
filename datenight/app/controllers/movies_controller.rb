@@ -4,6 +4,9 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
+    @zipcode = params[:zipcode]
+    
+    Movie.theaters_near(params[:zipcode], params[:day])
     @theaters_array = Movie.all
   end
 
@@ -25,7 +28,7 @@ class MoviesController < ApplicationController
   # POST /movies.json
   def create
     @zipcode = params[:zipcode]
-
+    
     Movie.theaters_near(params[:zipcode], params[:day])
     @theaters_array = Movie.all
 
@@ -72,6 +75,6 @@ class MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.require(:movie).permit(:theater_name, :theater_address, :movie_title)
+      params.require(:zipcode, :day)
     end
 end
