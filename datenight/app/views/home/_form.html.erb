@@ -7,3 +7,17 @@
 <br>
   <%= submit_tag 'Submit' %>
 <% end %>
+
+<form action="/movies" method="get">
+  <label for="zipcode">Zipcode: </label>
+  <input type="text" id="zipcode" name="zipcode">
+
+  <select name="day">
+    <option type="hidden" id="today" name="day" value="0">Today</option>
+    <option type="hidden" id="tomorrow" name="day" value="1">Tomorrow</option>
+    <option type="hidden" id="next_day" name="day" value="2"><%= @next_day %></option>
+    <option type="hidden" id="last_day" name="day" value="3"><%= @last_day %></option>
+  </select>  
+
+  <input type="submit" value="Submit">
+</form>
