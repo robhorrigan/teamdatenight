@@ -28,7 +28,7 @@ class RestaurantsController < ApplicationController
   def create
     @movie = params[:movie_name]
     @address = params[:theater_address]
-    @theater_name = params[:theater_name]
+
     @restaurants = Restaurant.findings["businesses"]
     # @restaurant = Restaurant.new(restaurant_params)
     # respond_to do |format|
