@@ -4,8 +4,9 @@
 
 
 <p><%= @theater_name%>, <%= @address %> </p>
+
 <%= form_tag ("/confirmations") do %>
-<input id="movie", name="movie" type="hidden", value="The Matrix 4: Please No" >
+<input id="movie", name="movie" type="hidden", value="<%"#{@movie}"%>" >
 
 <table>
   <thead>

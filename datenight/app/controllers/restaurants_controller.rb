@@ -4,6 +4,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
+
   end
 
   # GET /restaurants/1
@@ -74,6 +75,8 @@ class RestaurantsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
 
-      params.require(:theater_address)
+      # params.require(:theater_address)
+      params.require(:restaurant).permit(:theater_address)
+
     end
 end
