@@ -4,9 +4,10 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants_near_theater = Restaurant.findings(params[:theater_address])
-    @movie = params[:movie_title]
-    
+    @theater_address = params[:collected_info].split(" |; ")[1]
+    @restaurants_near_theater = Restaurant.findings(@theater_address)
+    @movie = params[:collected_info].split(" |; ")[0]
+    @time = params[:collected_info].split(" |; ")[2]
   end
 
   # GET /restaurants/1
@@ -75,7 +76,7 @@ class RestaurantsController < ApplicationController
     def restaurant_params
 
       # params.require(:theater_address)
-      params.require(:restaurant).permit(:theater_address, :movie_title)
+      params.require(:collected_info).permit(:theater_address, :movie_title)
 
     end
 end

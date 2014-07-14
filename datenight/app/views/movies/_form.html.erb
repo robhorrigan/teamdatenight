@@ -11,9 +11,8 @@
       <ol><% theater[:movies].each do |movie|%>
         <li><%= movie[:title] %> | <%= movie[:movie_info] %></li>
            <ul><% movie[:run_times].each do |time| %>
-                <input id="movie_title" type="hidden" name="movie_title" value='<%="#{movie[:title]}"%>'>
                 <li>
-                  <input type="radio" name="theater_address" value='<%="#{theater[:address]}"%>'><%= time%>
+                  <input type="radio" name="collected_info" value='<%=movie[:title]%> |; <%=theater[:address]%> |; <%=time%>'><%= time%>
                 </li>
               <%end%>
             </ul>
