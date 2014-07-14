@@ -1,8 +1,21 @@
+<%= form_tag("/restaurants") do %>
+  <ul><% @theaters_array.each do |theater|%>
+    <h3>Theater:</h3>
+    <li><%= theater[:name]%></li>
+    <li><%= theater[:number]%></li>
+    <li><%= theater[:address]%></li>
 
-<%= form_tag("/movies")  do %>
-  <%= label_tag ('postal') %>
-  <%= text_field_tag('zipcode')%>
-  <%= %>
-  <%= %>
-  <%= submit_tag 'Submit' %>
-<% end %>
+      <h4>Movies:</h4>
+      <ol><% theater[:movies].each do |movie|%>
+        <li><%= movie[:title] %> | <%= movie[:movie_info] %></li>
+           <ul><% movie[:run_times].each do |time| %>
+              <input type="hidden" id="<%= theater[:address] %>" theater_address="<%= theater[:address] %>">
+              <li><input type="radio" movie_title="<%= movie[:title] %>" value='<%="#{time}"%>'><%= time %></li>
+              <%end%>
+            </ul>
+      <% end %>
+      </ol>
+  <% end %>
+</ul>
+    <%= submit_tag 'Submit' %>
+<%end%>

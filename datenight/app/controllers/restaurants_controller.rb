@@ -4,14 +4,13 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-
   end
 
   # GET /restaurants/1
   # GET /restaurants/1.json
   def show
     @restaurant = params[:restaurant]
-    @movie = params[:movie_name]
+    @movie = params[:movie_title]
   end
 
   
@@ -26,7 +25,8 @@ class RestaurantsController < ApplicationController
   # POST /restaurants
   # POST /restaurants.json
   def create
-    @movie = params[:movie_name]
+    binding.pry
+    @movie = params[:movie_title]
     @address = params[:theater_address]
     @theater_name = params[:theater_name]
     @restaurants = Restaurant.findings["businesses"]
