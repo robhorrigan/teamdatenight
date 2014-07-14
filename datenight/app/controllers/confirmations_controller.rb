@@ -1,9 +1,9 @@
 class ConfirmationsController < ApplicationController
 
-	def create
+  def index
     @restaurant = params["restaurant_name"]
     @movie = params["movie"]
-	end
+  end
 
 	private
   # Use callbacks to share common setup or constraints between actions.

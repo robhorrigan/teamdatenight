@@ -4,9 +4,9 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @zipcode = params[:zipcode]
+    @user_location = params[:user_location]
     
-    Movie.theaters_near(params[:zipcode], params[:day])
+    Movie.theaters_near(params[:user_location], params[:day])
     @theaters_array = Movie.all
   end
 
@@ -27,11 +27,7 @@ class MoviesController < ApplicationController
   # POST /movies
   # POST /movies.json
   def create
-    @zipcode = params[:zipcode]
     
-    Movie.theaters_near(params[:zipcode], params[:day])
-    @theaters_array = Movie.all
-
     # respond_to do |format|
     #   if @movies.save
     #     format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
@@ -75,6 +71,6 @@ class MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.require(:zipcode, :day)
+      params.require(:user_location, :day)
     end
 end

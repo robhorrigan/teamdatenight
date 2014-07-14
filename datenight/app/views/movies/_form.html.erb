@@ -1,16 +1,16 @@
-<%= form_tag("/restaurants") do %>
+<h1>Theaters and Movie Times near <%= @user_location %>:</h1>
+
+<%= form_tag("/restaurants", :method => :get) do %>
   <ul><% @theaters_array.each do |theater|%>
     <h3>Theater:</h3>
     <li><%= theater[:name]%></li>
     <li><%= theater[:number]%></li>
     <li><%= theater[:address]%></li>
-
       <h4>Movies:</h4>
       <ol><% theater[:movies].each do |movie|%>
         <li><%= movie[:title] %> | <%= movie[:movie_info] %></li>
            <ul><% movie[:run_times].each do |time| %>
-              <input type="hidden" id="<%= theater[:address] %>" theater_address="<%= theater[:address] %>">
-              <li><input type="radio" movie_title="<%= movie[:title] %>" value='<%="#{time}"%>'><%= time %></li>
+              <li><input type="radio" name="theater_address" value='<%="#{theater[:address]}"%>'><%= time%></li>
               <%end%>
             </ul>
       <% end %>

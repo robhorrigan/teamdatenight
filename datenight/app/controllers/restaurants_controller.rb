@@ -4,6 +4,9 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
+
+    @restaurants_near_theater = Restaurant.findings(params[:theater_address])
+
   end
 
   # GET /restaurants/1
@@ -30,6 +33,7 @@ class RestaurantsController < ApplicationController
     @address = params[:theater_address]
     @theater_name = params[:theater_name]
     @restaurants = Restaurant.findings["businesses"]
+
     # @restaurant = Restaurant.new(restaurant_params)
     # respond_to do |format|
     #   if @restaurant.save
