@@ -3,9 +3,11 @@ require 'open-uri'
 class Movie < ActiveRecord::Base
   has_one :restaurant
 
-  def self.theaters_near(zipcode, day)
-      
-      html = open("http://www.google.com/movies?near=#{zipcode}&date=#{day}")
+  def self.theaters_near(user_location, day)
+      gsub_location = user_location.gsub(' ','+')
+
+
+      html = open("http://www.google.com/movies?near=#{gsub_location}&date=#{day}")
       
       movies_doc = Nokogiri::HTML(html)
 

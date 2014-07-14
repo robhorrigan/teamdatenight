@@ -1,0 +1,25 @@
+<h1>Theaters and Movie Times near <%= @user_location %>:</h1>
+
+<%= form_tag("/restaurants", :method => :get) do %>
+  <ul><% @theaters_array.each do |theater|%>
+    <h3>Theater:</h3>
+    <li><%= theater[:name]%></li>
+    <li><%= theater[:number]%></li>
+    <li><%= theater[:address]%></li>
+
+      <h4>Movies:</h4>
+      <ol><% theater[:movies].each do |movie|%>
+        <li><%= movie[:title] %> | <%= movie[:movie_info] %></li>
+           <ul><% movie[:run_times].each do |time| %>
+                <input id="movie_title" type="hidden" name="movie_title" value='<%="#{movie[:title]}"%>'>
+                <li>
+                  <input type="radio" name="theater_address" value='<%="#{theater[:address]}"%>'><%= time%>
+                </li>
+              <%end%>
+            </ul>
+      <% end %>
+      </ol>
+  <% end %>
+</ul>
+    <%= submit_tag 'Submit' %>
+<%end%>

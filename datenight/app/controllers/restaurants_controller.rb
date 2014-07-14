@@ -4,7 +4,9 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-
+    @restaurants_near_theater = Restaurant.findings(params[:theater_address])
+    @movie = params[:movie_title]
+    
   end
 
   # GET /restaurants/1
@@ -26,10 +28,7 @@ class RestaurantsController < ApplicationController
   # POST /restaurants
   # POST /restaurants.json
   def create
-    @movie = params[:movie_name]
-    @address = params[:theater_address]
-    @theater_name = params[:theater_name]
-    @restaurants = Restaurant.findings["businesses"]
+    
     # @restaurant = Restaurant.new(restaurant_params)
     # respond_to do |format|
     #   if @restaurant.save
@@ -76,7 +75,7 @@ class RestaurantsController < ApplicationController
     def restaurant_params
 
       # params.require(:theater_address)
-      params.require(:restaurant).permit(:theater_address)
+      params.require(:restaurant).permit(:theater_address, :movie_title)
 
     end
 end
