@@ -1,7 +1,8 @@
 <h1>Restaurants near your theater:</h1>
 
+<p>What will you have for dinner after seeing <%=@movie%>?</p>
+
 <%= form_tag ("/confirmations"), :method => :get do %>
-<input id="movie", name="movie" type="hidden", value="<%=  %>" >
 
 <table>
   <thead>
@@ -16,7 +17,7 @@
 <tbody>
 <% @restaurants_near_theater["businesses"].each do |restaurant|%>
   <tr>
-    <td><input type="radio" name="restaurant_name" value='<%="#{restaurant["name"]}"%>'><%="#{restaurant["name"]}"%></td>
+    <td><input type="radio" name="collected_info" value='<%="#{@movie} |; #{@theater_address} |; #{@time} |; #{restaurant["name"]} |; #{restaurant["location"]["display_address"]}"%>'><%="#{restaurant["name"]}"%></td>
     <td><%cuisine = "" %><% restaurant["categories"].each do |tag|%>
           <%cuisine << "#{tag[0]}, " %>
           <%end%>

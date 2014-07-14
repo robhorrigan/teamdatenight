@@ -1,8 +1,13 @@
 class ConfirmationsController < ApplicationController
 
   def index
-    @restaurant = params["restaurant_name"]
-    @movie = params["movie"]
+    @movie = params[:collected_info].split(" |; ")[0]
+    @theater_address = params[:collected_info].split(" |; ")[1]
+    @time = params[:collected_info].split(" |; ")[2]
+
+    @restaurant_address = params[:collected_info].split(" |; ")[4].split(",")[0][2..-2] + ", " + params[:collected_info].split(" |; ")[4].split(",")[-2][2..-1] + ", " + params[:collected_info].split(" |; ")[4].split(",")[-1][1..-3]
+    @restaurant = params[:collected_info].split(" |; ")[3]
+
   end
 
 	private
@@ -13,6 +18,6 @@ class ConfirmationsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def confirmation_params
-    params.require(:movie, :restaurant_name).permit(:name)
+    params.require(:collected_info).permit(:name)
   end
 end
