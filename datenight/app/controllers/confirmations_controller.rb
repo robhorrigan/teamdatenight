@@ -1,7 +1,5 @@
 class ConfirmationsController < ApplicationController
 
-
-
   def index
     @movie = params[:collected_info].split(" |; ")[0]
     @theater_address = params[:collected_info].split(" |; ")[1]
