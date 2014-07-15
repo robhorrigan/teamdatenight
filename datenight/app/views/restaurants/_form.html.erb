@@ -17,18 +17,16 @@
     <% @restaurants_near_theater["businesses"].each do |restaurant|%>
 
     <tr class="restaurant_row">
-      <td id="phot0-col"><input class="restaurant-btn" type="radio" name="collected_info" value='<%="#{@movie} |; #{@theater_address} |; #{@time} |; #{restaurant["name"]} |; #{restaurant["location"]["display_address"]}"%>'><img src="<%= restaurant["image_url"]%>"></td>
+      <td id="photo-col"><input class="restaurant-btn" type="radio" name="collected_info" value='<%="#{@movie} |; #{@theater_address} |; #{@time} |; #{restaurant["name"]} |; #{restaurant["location"]["display_address"]}"%>'>    <img src="<%= restaurant["image_url"]%>"></td>
       <td id="name-col"><%="#{restaurant["name"]}"%></td>
-      
       <td id="cuisine-col"><%cuisine = "" %><% restaurant["categories"].each do |tag|%>
             <%cuisine << "#{tag[0]}, " %>
-          <%end%>
+            <%end%>
             <%= cuisine[0..-3] %></td>
       <td id="rating-col"><%= restaurant["rating"] %></td>
       <td id="phone-col"><%= restaurant["display_phone"] %> </td>
       <td id="address-col"><%= restaurant["location"]["display_address"][0] %> </td>
     </tr>
-
   <% end %>
   </tbody>
 </table>
