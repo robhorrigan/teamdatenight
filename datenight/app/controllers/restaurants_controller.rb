@@ -29,7 +29,6 @@ class RestaurantsController < ApplicationController
   # POST /restaurants
   # POST /restaurants.json
   def create
-    binding.pry
     @movie = params[:movie_title]
     @address = params[:theater_address]
     @theater_name = params[:theater_name]
