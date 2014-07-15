@@ -1,8 +1,5 @@
 class Restaurant < ActiveRecord::Base
   belongs_to :movie
-  
-  def self.findings(theater_address)
-    gsub_theater_address = theater_address.gsub(',','').gsub(' ','+')
 
   def self.findings(theater_address)
     gsub_theater_address = theater_address.gsub(' ','+')
