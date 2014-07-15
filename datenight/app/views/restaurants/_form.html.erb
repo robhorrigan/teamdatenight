@@ -3,6 +3,7 @@
 <table >
   <thead>
     <tr>
+      <th>Photo</th>
       <th>Name</th>
       <th>Cuisine</th>
       <th>Rating</th>
@@ -16,6 +17,7 @@
     <% @restaurants_near_theater["businesses"].each do |restaurant|%>
 
     <tr class="restaurant_row">
+      <td><img src="<%= restaurant["image_url"]%>"></td>
       <td id="name-col">
         <input class="restaurant-btn" type="radio" name="collected_info" value='<%="#{@movie} |; #{@theater_address} |; #{@time} |; #{restaurant["name"]} |; #{restaurant["location"]["display_address"]}"%>'><%="#{restaurant["name"]}"%></td>
       
