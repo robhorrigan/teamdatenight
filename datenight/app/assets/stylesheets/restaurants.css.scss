@@ -1,3 +1,68 @@
 // Place all the styles related to the Restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.restaurants {
+  margin:0px 0px; 
+  padding:0px;
+  text-align:left;
+  font-size: 175%;
+  }
+
+.restaurant_heading{
+  color:white;
+  background-color:black;
+  padding-bottom: 5px;
+}
+
+.restaurant_row{
+  background-color:white;
+  font-color: blue;
+}
+
+table{
+    border: 1px solid black;
+    table-layout: fixed;
+    width: 400px;
+}
+
+th, td {
+    border: 1px solid black;
+    overflow: hidden;
+    width: 230px;
+    height: 40px;
+    padding-bottom: 5px;
+}
+
+.restaurant-btn {
+  display: inline;
+}  
+
+#name-col{
+  text-align:left;
+  font-size: 80%;
+}
+
+#cuisine-col{
+  text-align:left;
+  font-size: 80%;
+}
+
+#rating-col{
+  text-align:left;
+  font-size: 80%;
+}
+
+#phone-col{
+  text-align:left;
+  font-size: 80%;
+}
+
+#address-col{
+  text-align:left;
+  font-size: 80%;
+}
+
+
+
+  

@@ -1,6 +1,6 @@
 <%= form_tag ("/confirmations"), :method => :get do %>
 
-<table>
+<table >
   <thead>
     <tr>
       <th>Name</th>
@@ -8,22 +8,30 @@
       <th>Rating</th>
       <th>Phone Number</th>
       <th>Address</th>
+    </tr>
   </thead>    
 
-<tbody>
-<% @restaurants_near_theater["businesses"].each do |restaurant|%>
-  <tr>
-    <td><input type="radio" name="collected_info" value='<%="#{@movie} |; #{@theater_address} |; #{@time} |; #{restaurant["name"]} |; #{restaurant["location"]["display_address"]}"%>'><%="#{restaurant["name"]}"%></td>
-    <td><%cuisine = "" %><% restaurant["categories"].each do |tag|%>
-          <%cuisine << "#{tag[0]}, " %>
+  <tbody>
+
+    <% @restaurants_near_theater["businesses"].each do |restaurant|%>
+
+    <tr class="restaurant_row">
+      <td id="name-col">
+        <input class="restaurant-btn" type="radio" name="collected_info" value='<%="#{@movie} |; #{@theater_address} |; #{@time} |; #{restaurant["name"]} |; #{restaurant["location"]["display_address"]}"%>'><%="#{restaurant["name"]}"%></td>
+      
+      <td id="cuisine-col"><%cuisine = "" %><% restaurant["categories"].each do |tag|%>
+            <%cuisine << "#{tag[0]}, " %>
           <%end%>
-          <%= cuisine[0..-3] %></td>
-        <td><%= restaurant["rating"] %></td>
-        <td><%= restaurant["display_phone"] %> </td>
-        <td><%= restaurant["location"]["display_address"][0] %> </td>
-  </tr>
-<% end %>
-</tbody>
+            <%= cuisine[0..-3] %></td>
+      <td id="rating-col"><%= restaurant["rating"] %></td>
+      <td id="phone-col"><%= restaurant["display_phone"] %> </td>
+      <td id="address-col"><%= restaurant["location"]["display_address"][0] %> </td>
+    </tr>
+
+  <% end %>
+  </tbody>
 </table>
-<%= submit_tag 'Submit', class: 'btn' %>
+
+<br>
+<%= submit_tag 'Submit', class: 'subscribe-btn' %>
 <% end %>
