@@ -1,19 +1,37 @@
+                        <ul class="text-slide"> 
+                            <li>Welcome to <span class="text-color">4 Days</span> Out!</li>
+                            <li>Please make <span class="text-color">your</span> selection:</li>
+                        </ul>
+                        <div class="btn-group" id="menu">
+                          <button class="btn btn-default btn-lg dropdown-toggle" id="custom-button" type="button" data-toggle="dropdown">
+                            <form action="/movies" method="get">
 
-<h2>Please make your selection:</h2>
-<form action="/movies" method="get">
+                                  <label for="user_location">Find a theater near</label>
+                                  <input type="text" class="form-control subEmail wow fadeInLeft" id="user_location" placeholder="Zipcode or City, State" name="user_location">
+                                  <br>
+                                  <label>See a movie</label>
+                                    <select name="day" class="form-control wow fadeInLeft">
+                                      <option type="hidden" id="today" name="day" value="0" class="external">Today</option>
+                                      <option type="hidden" id="tomorrow" name="day" value="1" class="external">Tomorrow</option>
+                                      <option type="hidden" id="next_day" name="day" value="2" class="external"><%= @next_day %></option>
+                                      <option type="hidden" id="last_day" name="day" value="3" class="external"><%= @last_day %></option>
+                                    </select>  
+                                  <br>
+                                  <input type="submit" class="btn btn-1 img-btn wow fadeInRight" value="Submit">
 
-  <label for="user_location">Find movies near: </label>
-  <input type="text" id="user_location" name="user_location">
-
-  <select name="day">
-    <option type="hidden" id="today" name="day" value="0">Today</option>
-    <option type="hidden" id="tomorrow" name="day" value="1">Tomorrow</option>
-    <option type="hidden" id="next_day" name="day" value="2"><%= @next_day %></option>
-    <option type="hidden" id="last_day" name="day" value="3"><%= @last_day %></option>
-  </select>  
-  
-  <input type="submit" value="Submit">
-
-</form>
+                            </form>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
 
 
+<!-- <li class="dropdown nav-toggle">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog<b class="caret"></b></a>
+      <ul class="dropdown-menu">
+            <li><a class="external" href="blog.html">Blog</a></li>
+            <li><a class="external" href="blog-big.html">Blog Large</a></li>
+            <li><a class="external" href="single-post.html">Single Page</a></li>
+      </ul>
+</li> -->
