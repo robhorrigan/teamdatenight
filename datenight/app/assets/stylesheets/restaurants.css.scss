@@ -21,16 +21,23 @@
 }
 
 table{
-    border: 1px solid black;
     table-layout: fixed;
     width: 400px;
 }
 
-th, td {
-    border: 1px solid black;
+th {
+    border: 0px solid black;
     overflow: hidden;
     width: 230px;
-    height: 155px;
+    height: 100px;
+    padding-bottom: 5px;
+}
+
+td {
+    border: 0px solid black;
+    overflow: hidden;
+    width: 230px;
+    height: 130px;
     padding-bottom: 5px;
 }
 
@@ -40,27 +47,27 @@ th, td {
 
 #name-col{
   text-align:left;
-  font-size: 80%;
+  font-size: 90%;
 }
 
 #cuisine-col{
   text-align:left;
-  font-size: 80%;
+  font-size: 90%;
 }
 
 #rating-col{
-  text-align:left;
-  font-size: 80%;
+  text-align:center;
+  font-size: 90%;
 }
 
 #phone-col{
   text-align:left;
-  font-size: 80%;
+  font-size: 90%;
 }
 
 #address-col{
   text-align:left;
-  font-size: 80%;
+  font-size: 90%;
 }
 
 
