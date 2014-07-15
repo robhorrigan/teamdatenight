@@ -6,7 +6,6 @@
     <li><%= theater[:name]%></li>
     <li><%= theater[:number]%></li>
     <li><%= theater[:address]%></li>
-
       <h4>Movies:</h4>
       <ol><% theater[:movies].each do |movie|%>
         <li><%= movie[:title] %> | <%= movie[:movie_info] %></li>

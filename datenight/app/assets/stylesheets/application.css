@@ -12,6 +12,16 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap.min
+ *= require bootstrap-theme.min
+ *= require team-member
+ *= require fonts/font-awesome/css/font-awesome
+ *= require animations
+ *= require prettyPhoto
+ *= require jquery.bxslider
+ *= require style
+ *= require global
+ *= require colors/blue
  */
 
  

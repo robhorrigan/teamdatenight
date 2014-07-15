@@ -4,6 +4,9 @@ class Restaurant < ActiveRecord::Base
   def self.findings(theater_address)
     gsub_theater_address = theater_address.gsub(',','').gsub(' ','+')
 
+  def self.findings(theater_address)
+    gsub_theater_address = theater_address.gsub(' ','+')
+
     consumer_key = 'eTea0o4ChaOIb63F-te7Gg'
     consumer_secret = 'eJgmD0A9xzA40JLP3WeZ_cxhAHQ'
     token = 'BK68HjB4vIhIep_RYng-Drf9adE6FhvY'
