@@ -1,7 +1,61 @@
-<<<<<<< HEAD
-<h1>Theaters and Movie Times near <%= @zipcode %>:</h1>
+            <!-- Header -->
+            <header id="section1" class="parallax-slider">
+                  <!-- Navigation -->
+                  <div id="navigation">
+                        <nav class="navbar navbar-custom cl-effect-21" role="navigation">
+                              <div class="container">
+                                    <div class="row">
+                                          <div class="col-md-2 mob-logo">
+                                                <div class="row">
+                                                      <div class="site-logo">
+                                                            <a href="index-image-slider.html"><img src="img/logo.png" alt="Agency"></a>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          
 
+                                          <div class="col-md-10 mob-menu">
+                                                <div class="row">
+                                                      <!-- Brand and toggle get grouped for better mobile display -->
+                                          <div class="navbar-header">
+                                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                                                <i class="fa fa-bars"></i>
+                                                </button>
+                                          </div>
+                                                      <!-- Collect the nav links, forms, and other content for toggling -->
+                                                      <div class="collapse navbar-collapse" id="menu">
+                                                            <ul class="nav navbar-nav navbar-right">
+                                                                  <li> <%= link_to 'Home', root_path%> </li>
+                                                                  <li class ="active"><a href="#section2">Movies</a></li>
+                                                                  <li><a href="#section2">About Us</a></li>
+                 
+                                                                  <li><a href="#section7">Contact</a></li>
+                                                            </ul>
+                                                      </div>
+                                                      <!-- /.Navbar-collapse -->
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                              <!-- /.container -->
+                        </nav>
+                  </div> 
+                  <!-- /Navigation -->                          
+            </header>
+            <!-- /Header -->
+	
+
+ <div class="row">
+  
+                  <div class="col-md-12 big-title wow bounceIn">
+                        <h2>Theaters and Movie Times near <%= @user_location %>:</h2>
+                  </div>
+
+                  <div class="clearfix"></div>
+
+                  <div class="col-md-12 sub-title text-center wow slideInRight">
+                        <h3>What movie do you want to see?</h3>
+                  </div>
+            </div>
 <%= render 'form' %>
-=======
-<%= render 'form' %>
->>>>>>> 1412d20dfc4c9675e12dbcfad4efc99a67f49b9b
+
