@@ -1,23 +1,26 @@
-<h1>Theaters and Movie Times near <%= @user_location %>:</h1>
 
 <%= form_tag("/restaurants", :method => :get) do %>
-  <ul><% @theaters_array.each do |theater|%>
-    <h3>Theater:</h3>
-    <li><%= theater[:name]%></li>
-    <li><%= theater[:number]%></li>
-    <li><%= theater[:address]%></li>
+  <% @theaters_array.each do |theater|%>
+     <h3>Theater:</h3>
+     <%= theater[:name]%><br>
+    <%= theater[:number]%><br>
+    <%= theater[:address]%><br>
       <h4>Movies:</h4>
       <ol><% theater[:movies].each do |movie|%>
         <li><%= movie[:title] %> | <%= movie[:movie_info] %></li>
-           <ul><% movie[:run_times].each do |time| %>
-                <li>
-                  <input type="radio" name="collected_info" value='<%=movie[:title]%> |; <%=theater[:address]%> |; <%=time%>'><%= time%>
-                </li>
+           <% movie[:run_times].each do |time| %>
+               
+                  <input type="radio" name="collected_info" value='<%=movie[:title]%> |; <%=theater[:address]%> |; <%=time%>'>  <%= time%> | 
+                
               <%end%>
-            </ul>
+            
       <% end %>
+      
       </ol>
+      <br>
   <% end %>
-</ul>
-    <%= submit_tag 'Submit' %>
+
+
+    <%= submit_tag 'Submit', class: 'subscribe-btn' %>
 <%end%>
+</center>

@@ -1,2 +1,31 @@
-<h1>Welcome to 4 Days Out!</h1>
-<%= render 'form' %>
+<div id="section" class="image-parallax" style="background-image: url(/assets/dateNight_background.jpg)">
+      <div class="bg-overlay">
+            <div class="slide-content light">
+                  <div class="align-center">
+                        <!-- Top Logo -->
+                        <div class="top-logo">
+                              <div class="scrollNormal">
+                                    <!-- <a href="#"> -->
+                                          <img width="140" height="140" alt="Agency" src="/assets/logo_welcome.png">
+                                    <!-- </a> -->
+                              </div>
+                              <div class="scrollDown">
+                                    <!-- <a href="#"> -->
+                                          <img width="140" height="140" alt="Agency" src="/assets/logo2_welcome.png">
+                                    <!-- </a> -->
+                              </div> 
+                        </div>
+                        <ul class="text-slide"> 
+                            <li>Welcome to <span class="text-color">4 Days</span> Out</li>
+                            <li>Make <span class="text-color">your</span> selection</li>
+                        </ul>
+                        <div class="btn-group" id="menu">
+                              <div> 
+                                  <%= render 'form' %>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
+

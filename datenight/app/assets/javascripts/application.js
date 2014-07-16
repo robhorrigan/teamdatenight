@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 //= require_self
 //= require jquery-migrate-1.0.0
@@ -40,4 +39,4 @@
 //= require jquery.mb.YTPlayer
 //= require tytabs
 //= require custom
-
+//= require restaurant_click

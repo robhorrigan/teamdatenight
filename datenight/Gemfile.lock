@@ -140,6 +140,9 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spring
   sqlite3
+<<<<<<< HEAD
   turbolinks
   twilio-ruby
+=======
+>>>>>>> master
   uglifier (>= 1.3.0)
