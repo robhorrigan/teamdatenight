@@ -1,1 +1,87 @@
-<%= render 'form' %>
+<!-- Header -->
+            <header id="section1" class="parallax-slider">
+                  <!-- Navigation -->
+                  <div id="navigation">
+                        <nav class="navbar navbar-custom cl-effect-21" role="navigation">
+                              <div class="container">
+                                    <div class="row">
+                                          <div class="col-md-2 mob-logo">
+                                                <div class="row">
+                                                      <div class="site-logo">
+                                                            <a href="index-image-slider.html"><img src="images/logo.png" alt="Agency"></a>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          
+
+                                          <div class="col-md-10 mob-menu">
+                                                <div class="row">
+                                                      <!-- Brand and toggle get grouped for better mobile display -->
+                                          <div class="navbar-header">
+                                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                                                <i class="fa fa-bars"></i>
+                                                </button>
+                                          </div>
+                                                      <!-- Collect the nav links, forms, and other content for toggling -->
+                                                      <div class="collapse navbar-collapse" id="menu">
+                                                            <ul class="nav navbar-nav navbar-right">
+                                                                  <li class="active"><a href="#section1">Home</a></li>
+                                                                  <li><a href="#section2">About Us</a></li>
+                                                                  <li><a href="#section7">Contact</a></li>
+                                                            </ul>
+                                                      </div>
+                                                      <!-- /.Navbar-collapse -->
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                              <!-- /.container -->
+                        </nav>
+                  </div> 
+                  <!-- /Navigation -->                          
+            </header>
+<!-- /Header -->
+
+<!-- Service wrap -->
+<div class="about-wrap">
+      <div class="parallax-layer">
+            <div class="icons"></div>
+      </div>
+      <div class="parallax-layer">
+            <div class="texture"></div>
+      </div>
+      <div class="container">
+            <!-- Content row -->
+            <div class="row">
+    <br><br>
+            </div>
+            <!-- /Content row -->
+      </div>
+</div>
+<!-- /Service wrap -->
+
+<!-- Restaurants Near -->
+<div class="skills-wrap">
+      <div class="container">
+            <!-- Title row -->
+            <div class="row">
+                  <div class="col-md-12 big-title wow bounceIn">
+                        <h2>Restaurants Near Your Theater:</h2>
+                  </div>
+
+                  <div class="clearfix"></div>
+
+                  <div class="col-md-12 sub-title text-center wow slideInRight">
+                        <h2>What will you have for dinner after seeing <%=@movie%>?</h2>
+                  </div>
+            </div>
+            <!-- /Title row -->
+
+            <!-- Restaurants Form -->
+            <div class="restaurants">
+                  <%= render 'form' %>
+            </div>
+            <!-- /Restaurants Form -->
+      </div>
+</div>
+<!-- /Restaurants Near -->
