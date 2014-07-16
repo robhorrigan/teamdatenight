@@ -10,6 +10,14 @@ class ConfirmationsController < ApplicationController
 
   end
 
+  def create
+    @number = params["phone"]
+    @email = params["email"]
+    @message = params["message"]
+    @auth_token = 'fde2a5358e7e401c7bd66feb52b45604' 
+    @confirmation = Confirmation.message
+  end
+
 	private
   # Use callbacks to share common setup or constraints between actions.
   def set_restaurant
@@ -18,6 +26,6 @@ class ConfirmationsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def confirmation_params
-    params.require(:collected_info).permit(:name)
+    params.require(:collected_info, :name).permit(:phone, :email, :message)
   end
 end

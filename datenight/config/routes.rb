@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   root 'home#index'
 
   post '/restaurants/show' => 'restaurants#show'
+  get '/movies' => 'movies#index'
+  get '/img/logo2_welcome.png' => 'movies#index'
+  get '/img/logo_welcome.png' => 'movies#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
