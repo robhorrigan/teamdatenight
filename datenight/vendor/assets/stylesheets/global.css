@@ -8,7 +8,7 @@
 
 
 .spinner {
-	background: url(../img/flat-loader.gif);
+	background: url(image-path("flat-loader.gif"));
   	width: 128px;
   	height: 128px;
   	position: absolute;
