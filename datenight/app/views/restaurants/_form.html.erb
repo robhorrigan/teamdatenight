@@ -1,29 +1,34 @@
 <%= form_tag ("/confirmations"), :method => :get do %>
 
-<table>
-  <thead>
-    <tr>
+<table id="tableSelect" class="rowclick">
+  
+    <tr id="head">
+      <th scope="Row">Photo</th>
       <th>Name</th>
       <th>Cuisine</th>
       <th>Rating</th>
-      <th>Phone Number</th>
-      <th>Address</th>
-  </thead>    
+      <th>Contact</th>
+      <th>Location</th>
+    </tr>
+      
 
-<tbody>
-<% @restaurants_near_theater["businesses"].each do |restaurant|%>
-  <tr>
-    <td><input type="radio" name="collected_info" value='<%="#{@movie} |; #{@theater_address} |; #{@time} |; #{restaurant["name"]} |; #{restaurant["location"]["display_address"]}"%>'><%="#{restaurant["name"]}"%></td>
-    <td><%cuisine = "" %><% restaurant["categories"].each do |tag|%>
-          <%cuisine << "#{tag[0]}, " %>
-          <%end%>
-          <%= cuisine[0..-3] %></td>
+  <tbody>
+    <% @restaurants_near_theater["businesses"].each do |restaurant|%>
+      <tr>
+        <td id="photo-row" scope="col"><input type="radio" name="collected_info" class="restaurant-btn" value='<%="#{@movie} |; #{@theater_address} |; #{@time} |; #{restaurant["name"]} |; #{restaurant["location"]["display_address"]}"%>'>    <img src="<%= restaurant["image_url"]%>"></td>
+        <td><%="#{restaurant["name"]}"%></td>
+        <td><%cuisine = "" %><% restaurant["categories"].each do |tag|%>
+                <%cuisine << "#{tag[0]}, " %>
+              <%end%>
+                <%= cuisine[0..-3] %></td>
         <td><%= restaurant["rating"] %></td>
         <td><%= restaurant["display_phone"] %> </td>
         <td><%= restaurant["location"]["display_address"][0] %> </td>
-  </tr>
-<% end %>
-</tbody>
+      </tr>
+      <% end %>
+  </tbody>
 </table>
-<%= submit_tag 'Submit', class: 'btn' %>
+
+<br>
+<%= submit_tag 'Submit', class: 'subscribe-btn' %>
 <% end %>

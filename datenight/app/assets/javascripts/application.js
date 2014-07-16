@@ -39,4 +39,4 @@
 //= require jquery.mb.YTPlayer
 //= require tytabs
 //= require custom
-
+//= require restaurant_click

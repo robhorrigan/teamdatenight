@@ -17,6 +17,9 @@
   <link rel="apple-touch-icon" sizes="144x144" href="img/ico/apple-touch-icon-144.png">
 </head>
 <body>
+         <% if flash[:notice] %>
+        <div class="notice"><%= flash[:notice] %></div>
+        <% end %>
 
 <%= yield %>
 
