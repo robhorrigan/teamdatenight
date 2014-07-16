@@ -33,6 +33,9 @@ gem 'oauth'
 # Use unicorn as the app server
 # gem 'unicorn'
 gem 'nokogiri'
+gem 'twilio-ruby'
+gem "letter_opener", :group => :development
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
