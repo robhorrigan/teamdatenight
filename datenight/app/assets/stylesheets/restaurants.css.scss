@@ -2,71 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.restaurants {
-  margin:0px 0px; 
-  padding: 0px;
-  text-align:center;
-  font-size: 175%;
-  }
-
-.restaurant_heading{
-  color:white;
-  background-color:black;
-  padding-bottom: 5px;
+table{
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.restaurant_row{
+tr:nth-of-type(odd){
   background-color:white;
 }
 
-table{
-    table-layout: fixed;
-    width: 400px;
+tr:nth-of-type(even){
+  background-color:#CCC;
 }
+
+td, th { 
+    margin: 0px 0px;
+    padding: 0px;  
+    text-align: center; 
+  }
 
 th {
-    border: 0px solid black;
-    overflow: hidden;
-    width: 230px;
-    height: 100px;
-    padding-bottom: 5px;
-}
+  text-align: center;
+  color:white;
+  background-color:black;
+}  
 
-td {
-    border: 0px solid black;
-    overflow: hidden;
-    width: 230px;
-    height: 130px;
-    padding-bottom: 5px;
+#photo-row{
+  text-align: left;
 }
 
 .restaurant-btn {
   display: inline;
 }  
 
-#name-col{
-  text-align:left;
-  font-size: 90%;
-}
 
-#cuisine-col{
-  text-align:left;
-  font-size: 90%;
-}
-
-#rating-col{
-  text-align:center;
-  font-size: 90%;
-}
-
-#phone-col{
-  text-align:left;
-  font-size: 90%;
-}
-
-#address-col{
-  text-align:left;
-  font-size: 90%;
+#photo-row.rowHighlight{
+  background-color:red;
 }
 
   
