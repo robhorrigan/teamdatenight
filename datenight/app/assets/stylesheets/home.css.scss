@@ -6,7 +6,19 @@
   border: 3px solid #fff;
 }
 
+#custom-button {
+    border: 3px solid #fff;
+    color: #fff;
+    outline: none;
+}
+
+/* Button 1b */
 #custom-button:after {
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    background: #fff;
     content: '';
     position: absolute;
     z-index: -1;
@@ -15,8 +27,23 @@
     transition: all 0.3s;
 }
 
-#custom-button:hover {
-    outline: none;
-    background: none;
-}
 
+#custom-button {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 20px 70px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    z-index: 101;
+}

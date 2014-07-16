@@ -119,10 +119,10 @@ input.form-control, textarea.form-control {
 }
 
 
-input:hover, textarea:hover,
+/*input:hover, textarea:hover,
 input:focus, textarea:focus { 
     border-color: #C9C9C9; 
-}
+}*/
 
 
 
@@ -308,7 +308,7 @@ ul.fullwidth-slider, ul.fullwidth-slider .caption-inside {
 }
 
 .video-section .video-overlay {
-    background: url(../img/texture_layer.png) repeat;
+    background: url(image-path("texture_layer.png")) repeat;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 110px 0 32px;
     height: 100%; 
@@ -1008,7 +1008,7 @@ div.content-box.big div.content-box-info p {
 }
 
 .icons {
-  background: url(../img/bg_icons.png) no-repeat;
+  background: url(image-path("bg_icons.png")) no-repeat;
   height: 552px;
   width: 1600px;
   position: absolute;
@@ -1018,7 +1018,7 @@ div.content-box.big div.content-box-info p {
 }
 
 .texture {
-  background: url(../img/bg_pattern.png) no-repeat;
+  background: url(image-path("bg_pattern.png")) no-repeat;
   height: 352px;
   width: 1600px;
   position: absolute;
@@ -1028,7 +1028,7 @@ div.content-box.big div.content-box-info p {
 }
 
 .texture-layer, .bg-overlay {
-    background: url(../img/texture_layer.png) repeat;
+    background: url(image-path("texture_layer.png")) repeat;
 }
 
 .featuresss, .image-parallax  {
@@ -1057,20 +1057,20 @@ div.content-box.big div.content-box-info p {
 
 
 .testimonial-wrap {
-    background: url('../img/plx2.jpg') 50% 0 no-repeat fixed;
+    background: url(image-path("plx2.jpg") 50% 0 no-repeat fixed;
     
 }
 
 .quote-wrap {
-    background: url('../img/plx5.jpg') 50% 0 no-repeat fixed;
+    background: url(image-path("plx5.jpg") 50% 0 no-repeat fixed;
 }
 
 .subscription-wrap {
-    background: url('../img/plx4.jpg') 50% 0 no-repeat fixed;
+    background: url(image-path("plx4.jpg") 50% 0 no-repeat fixed;
 }
 
 .fun-wrap {
-    background: url('../img/plx3.jpg') 50% 0 no-repeat fixed;
+    background: url(image-path("plx3.jpg") 50% 0 no-repeat fixed;
 }
 
 
