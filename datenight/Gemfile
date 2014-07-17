@@ -34,6 +34,7 @@ gem 'oauth'
 # gem 'unicorn'
 gem 'nokogiri'
 gem 'twilio-ruby'
+gem 'twitter-bootstrap-rails'
 gem "letter_opener", :group => :development
 
 
