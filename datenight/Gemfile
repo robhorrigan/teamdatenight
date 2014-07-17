@@ -37,7 +37,10 @@ gem 'twilio-ruby'
 gem 'twitter-bootstrap-rails'
 gem "letter_opener", :group => :development
 
-
+group :development do
+	gem 'better_errors'
+	gem 'binding_of_caller'
+end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

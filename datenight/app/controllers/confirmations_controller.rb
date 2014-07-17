@@ -1,7 +1,6 @@
 class ConfirmationsController < ApplicationController
 
   def index
-
     @movie = params[:collected_info].split(" |; ")[0]
     @theater_address = params[:collected_info].split(" |; ")[1]
     @time = params[:collected_info].split(" |; ")[2]
@@ -21,10 +20,15 @@ class ConfirmationsController < ApplicationController
     @message = params[:text]
     @number = params[:phone]
     @email = params[:email]
-    Confirmation.message(@number, @message)
-    ConfirmationMailer.confirmation_email(@message, @email).deliver
-      redirect_to root_path, notice: "Thanks for using 4DaysOut! Enjoy your date!"
- 
+    if @email.empty?
+      Confirmation.message(@number, @message)
+    elsif @number.empty?
+      ConfirmationMailer.confirmation_email(@message, @email).deliver
+    elsif @number && @email
+      Confirmation.message(@number, @message)
+      ConfirmationMailer.confirmation_email(@message, @email).deliver
+    end
+    redirect_to root_path, success: "Thanks for using 4DaysOut! Enjoy your date!"
   end
 
 	private
