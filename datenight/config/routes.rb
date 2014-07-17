@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   post '/restaurants/show' => 'restaurants#show'
 
+  get '/about' => 'about#index', as: "about"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
