@@ -1885,6 +1885,7 @@ a.scrollup:hover i,a.scrollup:focus i {
 
 .google-maps {
     height: 400px;
+    width: 100%;
 }
 
 
