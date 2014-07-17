@@ -1,74 +1,61 @@
  <!-- Header -->
- <header id="section1" class="parallax-slider">
-  <!-- Navigation -->
-  <div id="navigation">
-    <nav class="navbar navbar-custom cl-effect-21" role="navigation">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-2 mob-logo">
-            <div class="row">
-              <div class="site-logo">
-                <a href="index-image-slider.html"><img src="img/logo.png" alt="Agency"></a>
-            </div>
+   <header id="section1" class="parallax-slider">
+    <!-- Navigation -->
+    <div id="navigation">
+      <nav class="navbar navbar-custom cl-effect-21" role="navigation">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2 mob-logo">
+              <div class="row">
+                <div class="site-logo">
+                  <a href="index-image-slider.html"><img src="img/logo.png" alt="Agency"></a>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="col-md-10 mob-menu">
+          <div class="row">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                  <i class="fa fa-bars"></i>
+              </button>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="menu">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#section1">Home</a></li>
+                <li><a href="#section2">About Us</a></li>
+                <li><a href="#section7">Contact</a></li>
+            </ul>
         </div>
-    </div>
-
-
-    <div class="col-md-10 mob-menu">
-        <div class="row">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
-                <i class="fa fa-bars"></i>
-            </button>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="menu">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="#section1">Home</a></li>
-              <li><a href="#section2">About Us</a></li>
-              <li><a href="#section3">Portfolio</a></li>
-              <li><a href="#section4">Services</a></li>
-              <li><a href="#section5">Clients</a></li>
-              <li><a href="#section6">Pricing</a></li>
-              <li class="dropdown nav-toggle">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a class="external" href="blog.html">Blog</a></li>
-                  <li><a class="external" href="blog-big.html">Blog Large</a></li>
-                  <li><a class="external" href="single-post.html">Single Page</a></li>
-              </ul>
-          </li>
-          <li><a href="#section7">Contact</a></li>
-      </ul>
+        <!-- /.Navbar-collapse -->
   </div>
-  <!-- /.Navbar-collapse -->
-</div>
-</div>
-</div>
-</div>
-<!-- /.container -->
-</nav>
-</div> 
-<!-- /Navigation -->                          
-</header>
+  </div>
+  </div>
+  </div>
+  <!-- /.container -->
+  </nav>
+  </div> 
+  <!-- /Navigation -->                          
+  </header>
 <!-- /Header -->
 
+<!-- Confirmation Form -->
 <div class="contact-form">
     <div class="container">
-      <!-- Title row -->
+  <!-- Title row -->
       <div class="row">
-
-
         <div class="col-md-12 big-title wow bounceIn">
-          <h2>This is the confirmation page!</h2>
+          <h2>Looks like a great date!</h2>
       </div>
 
       <div class="clearfix"></div>
 
       <div class="col-md-12 sub-title text-center wow slideInRight">
-          <h3>You'll be having dinner at <%= @restaurant %>, located at <%=@restaurant_address%>, and seeing <%= @movie%>, located at <%=@theater_address%> at <%=@time%> </h3>
+          <h3>You'll be having a meal at <%= @restaurant %>, located at <%=@restaurant_address%>, and seeing <%= @movie%>, located at <%=@theater_address%> at <%=@time%>.</h3>
       </div>
   </div>
   <!-- /Title row -->
@@ -78,82 +65,27 @@
     <div class="col-md-2"></div>
 
     <div class="col-md-8">
-      <form method="post" class="reply" id="contact">
-        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+      <%= render 'form' %>
+      <br>
+      <br>
+    </div>
 
-        <fieldset>
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInLeft">
-              <div class="row">
-                <div class="col-md-12">
-                  <input type= 'hidden' name = 'collected_info' value='<%="#{@movie} |; #{@theater_address} |; #{@time} |; #{@restaurant} |; #{@restaurant_address}"%>'>
-                  <input class="form-control" id="name" name="name" type="text" placeholder="Name" value="" required>
-
-              </div>
-
-              <div class="col-md-12">
-                  <input class="form-control" type="email" id="email" name="email" placeholder="Email" value="">
-              </div>
-              <div class="col-md-12">
-                  <input class="form-control" type="phone" id="phone" name="phone" placeholder="Phone Number" value="">
-              </div>
-          </div>
-      </div>
-
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow fadeInRight">
-          <div class="row">
-            <div class="col-md-12">
-              <textarea class="form-control" id="text" name="text" rows="10" cols="40" placeholder="Your Message" value=""required>Evening Itinerary: Dinner at <%=@restaurant%> (<%=@restaurant_address%>), then <%=@movie%> at at <%=@time%>, at <%=@theater_address%></textarea>
-          </div>
-      </div>
+  <div class="col-md-2"></div>
   </div>
-</div>
-<div class="row">
-    <div class="col-md-12 wow fadeInUp">
-      <button type="submit" class="btn btn-2 btn-2c">Send</button>
-      <div class="success alert-success alert" style="display:none">Your message has been sent successfully.</div>
-      <div class="error alert-danger alert" style="display:none">E-mail must be valid and message must be longer than 100 characters.</div>
-  </div>
-</div>
-</fieldset>
-</form>
-</div>
-
-<div class="col-md-2"></div>
-</div>
-<!-- /Form element row -->
+  <!-- /Form element row -->
 </div>
 </div>
-<!-- /Contact form -->
+<!-- /Confirmation Form -->
 
 <!-- Google Map -->
-<div class="map-wrap">
-    <div class="wow fadeInUp">
-      <div id="maps" class="google-maps">
+      <div class="map-embed"
+      <br>
+              <iframe
+                width=100%
+                height="450"
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyCIXP8fqFQ1wOecJHetYqgyASx6tYb8KkM&origin=<%=@restaurant_address%>&destination=<%=@theater_address%>">
+              </iframe>
       </div>
-  </div>
-</div>
 <!-- /Google Map -->
-
-<footer class="footer-wrap text-center">
-    <div class="container">
-      <ul class="social social-icons-footer-bottom wow fadeInDown">
-        <li class="facebook"><a href="#" data-toggle="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-        <li class="twitter"><a href="#" data-toggle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-        <li class="dribbble"><a href="#" data-toggle="tooltip" title="Dribble"><i class="fa fa-dribbble"></i></a></li>
-        <li class="linkedin"><a href="#" data-toggle="tooltip" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
-        <li class="rss"><a href="#" data-toggle="tooltip" title="Rss"><i class="fa fa-rss"></i></a></li>
-    </ul>
-
-    <p class="site-info wow fadeInUp"> © 2014 FifoThemes</p>
-</div>
-</footer>
-</section>
-<!-- /Section 7 -->
-
-<!-- Scroll To Top --> 
-<a href="#" class="scrollup"><i class="fa fa-angle-up"></i></a>      
-</div>
-<!-- /Warpper -->
-
 
