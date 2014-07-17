@@ -20,12 +20,11 @@ class ConfirmationsController < ApplicationController
 
     @message = params[:text]
     @number = params[:phone]
-    @confirmation = Confirmation.message(@number, @message)
-    if @confirmation
-      render :index, :notice => "Dinner is now confirmed!"
-    else
-      render :index, :notice => "Something went wrong, apologies."
-    end
+    @email = params[:email]
+    Confirmation.message(@number, @message)
+    ConfirmationMailer.confirmation_email(@message, @email).deliver
+      redirect_to root_path, notice: "Thanks for using 4DaysOut! Enjoy your date!"
+ 
   end
 
 	private
