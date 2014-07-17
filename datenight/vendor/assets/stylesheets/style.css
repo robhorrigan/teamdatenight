@@ -501,6 +501,7 @@ ul.text-slide {
 .btn:focus {
     outline: none;
     color: white;
+    background: none;
 }
 
 /* Button 1 */

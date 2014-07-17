@@ -1,26 +1,28 @@
 
 <%= form_tag("/restaurants", :method => :get) do %>
-  <% @theaters_array.each do |theater|%>
-     <h3>Theater:</h3>
-     <%= theater[:name]%><br>
-    <%= theater[:number]%><br>
-    <%= theater[:address]%><br>
-      <h4>Movies:</h4>
-      <ol><% theater[:movies].each do |movie|%>
-        <li><%= movie[:title] %> | <%= movie[:movie_info] %></li>
-           <% movie[:run_times].each do |time| %>
-               
-                  <input type="radio" name="collected_info" value='<%=movie[:title]%> |; <%=theater[:address]%> |; <%=time%>'>  <%= time%> | 
-                
-              <%end%>
-            
-      <% end %>
-      
-      </ol>
-      <br>
-  <% end %>
+
+<% @theaters_array.each do |theater|%>
+  <div class="theater-info">
+    <h2 align="center" class="theater-name"><%= theater[:name]%></h2>
+    <h4 align="center"><%= theater[:number]%></h4>
+    <h4 align="center"><%= theater[:address]%></h4><br>
+  
+        <ol align="center" class="remove-list-number movie"><% theater[:movies].each do |movie|%>
+          <div class="movie-title-info">
+            <li align="center"><h4 class="movie-title"><%= movie[:title] %></h4></li>
+            <li><h5><%= movie[:movie_info] %></h5></li>
+              <div class="movie-runtimes">
+                <% movie[:run_times].each do |time| %>
+                  <input type="radio" name="collected_info" value='<%=movie[:title]%> |; <%=theater[:address]%> |; <%=time%>'><%= time%> |
+                <%end%>
+              </div>
+          </div>
+        <% end %>
+        </ol>
+        <br>
+  </div>   
+<% end %>
 
 
-    <%= submit_tag 'Submit', class: 'subscribe-btn' %>
+<%= submit_tag 'Submit', class: 'subscribe-btn'%>
 <%end%>
-</center>

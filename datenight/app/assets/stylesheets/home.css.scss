@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#custom-button{
-  border: 3px solid #fff;
-}
-
 #custom-button {
     border: 3px solid #fff;
     color: #fff;
@@ -13,7 +9,7 @@
 }
 
 /* Button 1b */
-#custom-button:after {
+#custom-button.custom-btn:after {
     width: 100%;
     height: 0;
     top: 0;
@@ -25,6 +21,8 @@
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
+    text-decoration: white;
+    color: white;
 }
 
 #custom-button {
@@ -45,5 +43,11 @@
     -moz-transition: all 0.3s;
     transition: all 0.3s;
     z-index: 101;
+}
+
+#custom-button.custom-btn:active {
+    outline: none;
+    color: white;
+    text-decoration: white;
 }
 
