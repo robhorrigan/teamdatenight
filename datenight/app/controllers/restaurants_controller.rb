@@ -4,6 +4,10 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
+    if params[:collected_info].nil?
+      flash[:notice] = "You didn't select a movie! Doesn't sound like a fun date! :("
+      redirect_to(:back) and return
+    end
     @theater_address = params[:collected_info].split(" |; ")[1]
     @restaurants_near_theater = Restaurant.findings(@theater_address)
     @movie = params[:collected_info].split(" |; ")[0]
@@ -16,9 +20,7 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = params[:restaurant]
     @movie = params[:movie_title]
-    # if @restaurant.empty?
-    #   :notice => "You didnt put anything silly"
-    # end
+
   end
 
 
