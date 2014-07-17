@@ -2,7 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.alert {
+.alert.alert-success.fade.in {
 	margin-bottom: 0px;
+	padding-bottom: 50px;
+	font-size: 200%;
 	text-align: center;
+	background: #2eaef0;  
+	border-color: #2eaef0; 
+	color: white; 
 }

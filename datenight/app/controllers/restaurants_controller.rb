@@ -8,10 +8,7 @@ class RestaurantsController < ApplicationController
     @restaurants_near_theater = Restaurant.findings(@theater_address)
     @movie = params[:collected_info].split(" |; ")[0]
     @time = params[:collected_info].split(" |; ")[2]
-    # if @restaurant.empty?
-    #   alert: "You didnt put anything silly"
-    # end
-    binding.pry
+
   end
 
   # GET /restaurants/1
@@ -19,10 +16,13 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = params[:restaurant]
     @movie = params[:movie_title]
+    # if @restaurant.empty?
+    #   :notice => "You didnt put anything silly"
+    # end
   end
 
-  
-# GET /restaurants/new
+
+  # GET /restaurants/new
   # def new
   #   @restaurant = Restaurant.new
   # end
@@ -75,16 +75,16 @@ class RestaurantsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_restaurant
-      @restaurant = Restaurant.new(params[:theater_address])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_restaurant
+    @restaurant = Restaurant.new(params[:theater_address])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def restaurant_params
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def restaurant_params
 
-      # params.require(:theater_address)
-      params.require(:collected_info).permit(:theater_address, :movie_title)
+    # params.require(:theater_address)
+    params.require(:collected_info).permit(:theater_address, :movie_title)
 
-    end
+  end
 end
