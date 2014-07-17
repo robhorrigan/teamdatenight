@@ -40,3 +40,4 @@
 //= require tytabs
 //= require custom
 //= require restaurant_click
+//= require custom_movie
