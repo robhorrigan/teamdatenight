@@ -8,7 +8,7 @@
             <div class="col-md-2 mob-logo">
               <div class="row">
                 <div class="site-logo">
-                  <a href="index-image-slider.html"><img src="img/logo.png" alt="Agency"></a>
+                  <a href="#"><%= image_tag "/assets/custom_header_logo.png" %></a>
               </div>
           </div>
       </div>
@@ -26,9 +26,9 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="menu">
               <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#section1">Home</a></li>
-                <li><a href="#section2">About Us</a></li>
-                <li><a href="#section7">Contact</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Restaurants</a></li>
+                <li class="active"><a href="#">Confirmation</a></li>
             </ul>
         </div>
         <!-- /.Navbar-collapse -->
@@ -43,6 +43,10 @@
   </header>
 <!-- /Header -->
 
+
+
+
+
 <!-- Confirmation Form -->
 <div class="contact-form">
     <div class="container">
@@ -55,7 +59,7 @@
       <div class="clearfix"></div>
 
       <div class="col-md-12 sub-title text-center wow slideInRight">
-          <h3>You and your date will be having a meal at <%= @restaurant %> located at <%=@restaurant_address%>, and seeing <%= @movie%> at <%=@time%> at <%= @theater_name %> located at <%=@theater_address%> .</h3>
+          <h3>You and your date will be having a meal at <%= @restaurant %> located at <%=@restaurant_address%>, and seeing <%= @movie%> at <%=@time%> at <%= @theater_name %> located at <%=@theater_address%>.</h3>
       </div>
   </div><br>
   <!-- /Title row -->
