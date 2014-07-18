@@ -14,23 +14,23 @@
 
   <tbody>
     <% @restaurants_near_theater["businesses"].each do |restaurant|%>
-      <% if restaurant["rating"] >= 3.0 %>
-        <tr>
-         <td id="photo-row" scope="col"><input type="radio" name="collected_info" class="restaurant -btn" value='<%="#{@movie} |; #{@theater_address} |; #{@time} |; #{restaurant["name"]} |; #{restaurant["location"]["display_address"]} |; #{@theater_name}"%>'>    <img src="<%= restaurant["image_url"]%>"></td>
-         <td><%="#{restaurant["name"]}"%></td>
-         <td><%cuisine = "" %><% restaurant["categories"].each do |tag|%>
-                  <%cuisine << "#{tag[0]}, " %>
-                <%end%>
-                  <%= cuisine[0..-3] %></td>
-          <td><%= restaurant["rating"] %></td>
-          <td><%= restaurant["display_phone"] %> </td>
-          <td><%= restaurant["location"]["display_address"][0] %> </td>
-        </tr>
-        <% end %>
+    <% if restaurant["rating"] >= 3.0 %>
+      <tr>
+        <td id="photo-row" scope="col"><input type="radio" name="collected_info" class="restaurant-btn" value='<%="#{@movie} |; #{@theater_address} |; #{@time} |; #{restaurant["name"]} |; #{restaurant["location"]["display_address"]} |; #{@theater_name}"%>'>    <img src="<%= restaurant["image_url"]%>"></td>
+        <td><%="#{restaurant["name"]}"%></td>
+        <td><%cuisine = "" %><% restaurant["categories"].each do |tag|%>
+                <%cuisine << "#{tag[0]}, " %>
+              <%end%>
+                <%= cuisine[0..-3] %></td>
+        <td><%= restaurant["rating"] %></td>
+        <td><%= restaurant["display_phone"] %> </td>
+        <td><%= restaurant["location"]["display_address"][0] %> </td>
+      </tr>
+      <% end %>
       <% end %>
   </tbody>
 </table>
 
 <br>
-<%= submit_tag 'Submit', class: 'subscribe-btn' %>
+<center><%= submit_tag 'Submit', class: 'subscribe-btn' %></center>
 <% end %>

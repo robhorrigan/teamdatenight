@@ -14,10 +14,28 @@ div.movie-runtimes {
   display: none;
 }
 
-@media screen and (orientation: portrait) {
-  .site-logo a img { max-width: 112%; }
+h3{
+		display: inline; 
 }
 
-@media screen and (orientation: landscape) {
-  .site-logo a img { max-height: 112%; }
+h3:hover {
+	color: #2eaef0;
+
+}
+
+h2{
+	 background: -webkit-linear-gradient(#eee, #2eaef0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+footer{
+  color:white;
+  background-color:#252C34;
+}
+
+.flatiron-link:hover{
+  color:#249eee;
+  background-color:transparent;
+  text-decoration:none;
 }
