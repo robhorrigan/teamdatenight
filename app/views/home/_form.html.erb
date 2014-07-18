@@ -1,0 +1,16 @@
+<form action="/movies" method="get">
+    <label for="user_location">Find a theater near</label>
+    <input type="text" class="form-control subEmail wow fadeInLeft" id="user_location" placeholder="Zipcode or City, State" name="user_location" required>
+    <br>
+    <label>See a movie</label>
+      <select name="day" class="form-control wow fadeInLeft" required>
+        <option type="hidden" id="today" name="day" value="0" class="external">Today</option>
+        <option type="hidden" id="tomorrow" name="day" value="1" class="external">Tomorrow</option>
+        <option type="hidden" id="next_day" name="day" value="2" class="external"><%= @next_day %></option>
+        <option type="hidden" id="last_day" name="day" value="3" class="external"><%= @last_day %></option>
+      </select>  
+    <br>
+      <div id="custom-button" class="slide-content">
+          <input type="submit" class="btn btn-1 img-btn wow fadeInRight " value="Submit">
+      </div>
+</form>            

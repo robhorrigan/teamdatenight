@@ -1,0 +1,71 @@
+          <!-- Header -->
+            <header id="section1" class="parallax-slider">
+                  <!-- Navigation -->
+                  <div id="navigation">
+                        <nav class="navbar navbar-custom cl-effect-21" role="navigation">
+                              <div class="container">
+                                    <div class="row">
+                                          <div class="col-md-2 mob-logo">
+                                                <div class="row">
+                                                      <div class="site-logo">
+                                                            <a href="#"><%= image_tag "/assets/custom_header_logo.png" %></a>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          
+
+                                          <div class="col-md-10 mob-menu">
+                                                <div class="row">
+                                                      <!-- Brand and toggle get grouped for better mobile display -->
+                                          <div class="navbar-header">
+                                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                                                <i class="fa fa-bars"></i>
+                                                </button>
+                                          </div>
+                                                      <!-- Collect the nav links, forms, and other content for toggling -->
+                                                      <div class="collapse navbar-collapse" id="menu">
+                                                            <ul class="nav navbar-nav navbar-right">
+                                                                  <!-- <li> <%#= link_to 'Home', root_path%> </li> -->
+                                                                  <li class ="active"><a href="#">Movies</a></li>
+                                                                  <li><a href="#">Restaurants</a></li>
+                                                                  <li><a href="#">Confirmation</a></li>
+                                                            </ul>
+                                                      </div>
+                                                      <!-- /.Navbar-collapse -->
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                              <!-- /.container -->
+                        </nav>
+                  </div> 
+                  <!-- /Navigation -->                          
+            </header>
+            <!-- /Header -->
+
+
+	
+
+ <div class="row">
+  
+                  <div class="col-md-12 big-title wow bounceIn">
+                        <h2>Theaters and Movie Times near <%= @user_location %>:</h2>
+                  </div>
+
+                  <div class="clearfix"></div>
+
+                  <div class="col-md-12 sub-title text-center wow slideInRight">
+                        <h3>Start by selecting a Theater.<br></h3>
+                         <h3>Next, your movie of choice.<br></h3>
+                         <h3>Finally, browse your movie's showtimes!</h3>
+                  </div>
+</div>
+<%= render 'form' %>
+
+
+<footer class="footer-wrap text-center">
+      <div class="container">
+            <p class="site-info wow fadeInUp"> 
+              <div>Built with &#9829; at <a class="flatiron-link" href="http://flatironschool.com/">The Flatiron School</a> by NYC Web Development Fellows, &copy; 2014</div>
+      </div>
+</footer>

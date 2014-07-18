@@ -1,0 +1,52 @@
+// Place all the styles related to the Restaurants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr:nth-of-type(odd){
+  background-color:white;
+}
+
+tr:nth-of-type(even){
+  background-color:#CCC;
+}
+
+td, th { 
+    margin: 0px 0px;
+    padding: 0px;  
+    text-align: center; 
+  }
+
+th {
+  text-align: center;
+  color:white;
+  background-color:black;
+}  
+
+#photo-row{
+  text-align: left;
+}
+
+.restaurant-btn {
+  display: inline;
+}  
+
+
+#photo-row.rowHighlight{
+  background-color:red;
+}
+
+footer{
+  color:white;
+  background-color:#252C34;
+}
+
+.flatiron-link:hover{
+  color:#249eee;
+  background-color:transparent;
+  text-decoration:none;
+}  
