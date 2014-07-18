@@ -13,3 +13,11 @@ div.movie-title-info {
 div.movie-runtimes {
   display: none;
 }
+
+@media screen and (orientation: portrait) {
+  .site-logo a img { max-width: 112%; }
+}
+
+@media screen and (orientation: landscape) {
+  .site-logo a img { max-height: 112%; }
+}
