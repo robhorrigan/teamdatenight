@@ -23,14 +23,14 @@ class ConfirmationsController < ApplicationController
 
     @name = params[:name]
     @message = params[:text]
-    @number = params[:phone]
+    @numbers = params[:phone].split(", ")
     @email = params[:email]
     if @email.empty?
-      Confirmation.message(@number, @message)
-    elsif @number.empty?
+      Confirmation.message(@numbers, @message)
+    elsif @numbers.empty?
       ConfirmationMailer.confirmation_email(@name, @message, @email).deliver
-    elsif @number && @email
-      Confirmation.message(@number, @message)
+    elsif @numbers && @email
+      Confirmation.message(@numbers, @message)
       ConfirmationMailer.confirmation_email(@name, @message, @email).deliver
     end
     redirect_to root_path, success: "Thanks for using 4DaysOut! Enjoy your date!"
