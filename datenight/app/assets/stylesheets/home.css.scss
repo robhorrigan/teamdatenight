@@ -51,3 +51,18 @@
     text-decoration: white;
 }
 
+.text-slide li {
+    font-size: 80px;
+}
+
+@media(max-width: 1580px) {
+  .text-slide li {
+    font-size: 80px;
+  }
+}
+@media(max-width: 767px) {
+  .text-slide li {
+    font-size: 50px;
+    line-height: 60px;
+  }
+}
