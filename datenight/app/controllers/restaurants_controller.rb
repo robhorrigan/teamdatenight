@@ -12,6 +12,7 @@ class RestaurantsController < ApplicationController
     @restaurants_near_theater = Restaurant.findings(@theater_address)
     @movie = params[:collected_info].split(" |; ")[0]
     @time = params[:collected_info].split(" |; ")[2]
+    @theater_name = params[:collected_info].split(" |; ")[3]
 
   end
 
