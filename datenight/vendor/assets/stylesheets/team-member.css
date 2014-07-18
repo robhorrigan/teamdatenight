@@ -34,8 +34,9 @@
 .team-member-meta {
     padding-left: 40px;
     margin-left: 180px;
+    margin-right: 10px;
     min-height: 180px;
-    position: relative;
+    position: fixed;
 }
 
 .team-member-name {
