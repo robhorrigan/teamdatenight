@@ -13,7 +13,7 @@
             <li><h5><%= movie[:movie_info] %></h5></li>
               <div class="movie-runtimes">
                 <% movie[:run_times].each do |time| %>
-                  <input type="radio" name="collected_info" value='<%=movie[:title]%> |; <%=theater[:address]%> |; <%=time%>'><%= time%> |
+                  <input type="radio" name="collected_info" value='<%=movie[:title]%> |; <%=theater[:address]%> |; <%=time%> |; <%=theater[:name]%>'><%= time%> |
                 <%end%>
               </div>
           </div>
