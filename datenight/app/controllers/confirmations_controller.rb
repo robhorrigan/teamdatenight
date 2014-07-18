@@ -8,9 +8,9 @@ class ConfirmationsController < ApplicationController
     @movie = params[:collected_info].split(" |; ")[0]
     @theater_address = params[:collected_info].split(" |; ")[1]
     @time = params[:collected_info].split(" |; ")[2]
-
     @restaurant_address = params[:collected_info].split(" |; ")[4].split(",")[0][2..-2] + ", " + params[:collected_info].split(" |; ")[4].split(",")[-2][2..-1] + ", " + params[:collected_info].split(" |; ")[4].split(",")[-1][1..-3]
     @restaurant = params[:collected_info].split(" |; ")[3]
+    @theater_name = params[:collected_info].split(" |; ")[5]
   end
 
   def create
@@ -23,14 +23,14 @@ class ConfirmationsController < ApplicationController
 
     @name = params[:name]
     @message = params[:text]
-    @number = params[:phone]
+    @numbers = params[:phone].split(", ")
     @email = params[:email]
     if @email.empty?
-      Confirmation.message(@number, @message)
-    elsif @number.empty?
+      Confirmation.message(@numbers, @message)
+    elsif @numbers.empty?
       ConfirmationMailer.confirmation_email(@name, @message, @email).deliver
-    elsif @number && @email
-      Confirmation.message(@number, @message)
+    elsif @numbers && @email
+      Confirmation.message(@numbers, @message)
       ConfirmationMailer.confirmation_email(@name, @message, @email).deliver
     end
     redirect_to root_path, success: "Thanks for using 4DaysOut! Enjoy your date!"

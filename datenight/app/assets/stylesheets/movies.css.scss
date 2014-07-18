@@ -13,3 +13,19 @@ div.movie-title-info {
 div.movie-runtimes {
   display: none;
 }
+h3{
+		display: inline; 
+}
+
+h3:hover {
+	color: #2eaef0;
+
+}
+
+h2{
+	 background: -webkit-linear-gradient(#eee, #2eaef0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
