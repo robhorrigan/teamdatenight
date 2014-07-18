@@ -8,9 +8,9 @@ class ConfirmationsController < ApplicationController
     @movie = params[:collected_info].split(" |; ")[0]
     @theater_address = params[:collected_info].split(" |; ")[1]
     @time = params[:collected_info].split(" |; ")[2]
-
     @restaurant_address = params[:collected_info].split(" |; ")[4].split(",")[0][2..-2] + ", " + params[:collected_info].split(" |; ")[4].split(",")[-2][2..-1] + ", " + params[:collected_info].split(" |; ")[4].split(",")[-1][1..-3]
     @restaurant = params[:collected_info].split(" |; ")[3]
+    @theater_name = params[:collected_info].split(" |; ")[5]
   end
 
   def create
