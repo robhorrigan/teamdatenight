@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
+  get '/home' => 'home#index'
+
   root 'home#index'
 
   post '/restaurants/show' => 'restaurants#show'
