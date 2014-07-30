@@ -44,6 +44,20 @@ Rails.application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
+  config.action_mailer.default_url_options = {host: "localhost:3000"}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.1and1.com",
+    port: 587,
+    domain: "4daysout.com",
+    authentication: "login",
+    enable_starttls_auto: true,
+    user_name: "confirmation@4daysout.com",
+    password: "ilovetoCode1!",
+    enable_starttls_auto: true
+  }
+
+
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
