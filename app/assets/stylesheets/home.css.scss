@@ -68,10 +68,15 @@
 }
 
 @media(max-width: 480px) {
+
+    .hide {
+        display: none;
+    }
+    
     .text-slide li {
         font-size: 25px;
         line-height: 20px;
-        float: initial;
+        float: left;
     }
 
     #user_location,
@@ -80,9 +85,5 @@
     #about {
       width: 200px; 
       height: 30px;
-    }
-
-    .hide {
-        display: none;
     }
 }
