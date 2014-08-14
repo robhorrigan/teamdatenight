@@ -67,7 +67,7 @@
   }
 }
 
-@media only screen and (max-device-width: 480px) {
+@media(max-width: 480px) {
     .text-slide li {
     font-size: 25px;
     line-height: 30px;
