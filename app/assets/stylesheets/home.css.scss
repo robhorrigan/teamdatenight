@@ -70,6 +70,14 @@
 @media(max-width: 480px) {
     .text-slide li {
     font-size: 25px;
-    line-height: 30px;
-  }
+    line-height: 25px;
+    }
+
+    #user_location,
+    #user_day,
+    #submit,
+    #about {
+      width: 50px; 
+      height: 10px;
+    }
 }
