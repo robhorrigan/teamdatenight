@@ -11,6 +11,7 @@ class ConfirmationsController < ApplicationController
     @restaurant_address = params[:collected_info].split(" |; ")[4].split(",")[0][2..-2] + ", " + params[:collected_info].split(" |; ")[4].split(",")[-2][2..-1] + ", " + params[:collected_info].split(" |; ")[4].split(",")[-1][1..-3]
     @restaurant = params[:collected_info].split(" |; ")[3]
     @theater_name = params[:collected_info].split(" |; ")[5]
+    @google_key = ENV["GOOGLE"]
   end
 
   def create
@@ -20,7 +21,7 @@ class ConfirmationsController < ApplicationController
 
     @restaurant_address = params[:collected_info].split(" |; ")[4].split(",")[0][2..-2] + ", " + params[:collected_info].split(" |; ")[4].split(",")[-2][2..-1] + ", " + params[:collected_info].split(" |; ")[4].split(",")[-1][1..-3]
     @restaurant = params[:collected_info].split(" |; ")[3]
-
+   
     @name = params[:name]
     @message = params[:text]
     @numbers = params[:phone].split(", ")

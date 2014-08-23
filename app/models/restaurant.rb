@@ -4,10 +4,10 @@ class Restaurant < ActiveRecord::Base
   def self.findings(theater_address)
     gsub_theater_address = theater_address.gsub(' ','+')
 
-    consumer_key = 'eTea0o4ChaOIb63F-te7Gg'
-    consumer_secret = 'eJgmD0A9xzA40JLP3WeZ_cxhAHQ'
-    token = 'BK68HjB4vIhIep_RYng-Drf9adE6FhvY'
-    token_secret = '2Fa0SGivQYnjgd7S3YtMelWwjUw'
+    consumer_key = ENV["YELP_CONSUMER_KEY"]
+    consumer_secret = ENV["YELP_CONSUMER_SECRET"]
+    token = ENV["YELP_TOKEN"]
+    token_secret = ENV["YELP_TOKEN_SECRET"]
 
     api_host = 'api.yelp.com'
 

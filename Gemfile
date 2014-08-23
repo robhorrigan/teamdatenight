@@ -36,6 +36,7 @@ gem 'nokogiri'
 gem 'twilio-ruby'
 gem 'twitter-bootstrap-rails'
 gem "letter_opener", :group => :development
+gem "figaro"
 
 group :development do
 	gem 'better_errors'
