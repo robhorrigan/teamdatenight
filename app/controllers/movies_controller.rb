@@ -1,13 +1,8 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
 
-  # GET /movies
-  # GET /movies.json
+
   def index
-    if params[:collected_info].nil?
-      flash[:notice] = "Make sure you use a city and state to search for a movie"
-      redirect_to(:back) and return
-    end
     @user_location = params[:user_location]
     Movie.theaters_near(params[:user_location], params[:day])
     @theaters_array = Movie.all
